@@ -19,11 +19,11 @@ runs:
       run: |
         chmod 755 ./resources/ci/common/reset.py
         python ./resources/ci/common/reset.py
-    # - name: Validate
-    #   shell: bash
-    #   run: |
-    #     chmod 755 ./resources/ci/common/validate.py
-    #     python ./resources/ci/common/validate.py
+    - name: Validate
+      shell: bash
+      run: |
+        chmod 755 ./resources/ci/common/validate.py
+        python ./resources/ci/common/validate.py
     - name: Re-source Main
       shell: bash
       run: |
