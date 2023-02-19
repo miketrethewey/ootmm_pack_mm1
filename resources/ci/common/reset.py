@@ -12,7 +12,7 @@ import urllib.request
 import zipfile
 
 print("  > Cleaning up from Resetter...")
-subprocess.call(["py", os.path.join(".", "resources", "ci", "common", "cleanup.py")], shell=True)
+subprocess.call(["python", os.path.join(".", "resources", "ci", "common", "cleanup.py")], shell=True)
 
 srcs = {
     "ootrando_overworldmap_hamsda": {

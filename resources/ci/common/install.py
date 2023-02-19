@@ -6,9 +6,9 @@ import subprocess
 
 print("> Installing...")
 print(" > Resetting from Installer...")
-subprocess.call(["py", os.path.join(".", "resources", "ci", "common", "reset.py")], shell=True)
+subprocess.call(["python", os.path.join(".", "resources", "ci", "common", "reset.py")], shell=True)
 print()
 
 print(" > Re-sourcing from Installer...")
-subprocess.call(["py", os.path.join(".", "resources", "ci", "common", "resrc.py")], shell=True)
+subprocess.call(["python", os.path.join(".", "resources", "ci", "common", "resrc.py")], shell=True)
 print()
