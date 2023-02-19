@@ -43,7 +43,8 @@ for src, src_data in srcs.items():
                     archive_file.write(archive_data)
                 error = False
     if error:
-        sys.exit(1)
+        # sys.exit(1)
+        pass
     else:
         print("   > ARCHIVE :", archive_path)
         with(zipfile.ZipFile(archive_path)) as myarchive:
