@@ -11,6 +11,7 @@ import sys
 import urllib.request
 import zipfile
 
+print("  > Cleaning up from Resetter...")
 subprocess.call(os.path.join(".", "resources", "ci", "common", "cleanup.py"), shell=True)
 
 srcs = {
