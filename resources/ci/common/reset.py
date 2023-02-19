@@ -52,45 +52,46 @@ for src, src_data in srcs.items():
             print("   > DEST    :", dest)
             myarchive.extractall(dest)
 
-    if "mm" in src:
-        with(
-            open(
-                os.path.join(
-                    ".",
-                    src,
-                    "items",
-                    "options.json"
-                ),
-                "r+",
-                encoding="utf-8"
+    if os.path.isdir(os.path.join(".", src)):
+        if "mm" in src:
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "items",
+                        "options.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                for i in range(140, 147):
+                    jsonLines[i - 1] = ""
+                jsonLines[140 - 1] = "}" + "\n"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "layouts",
+                        "broadcast.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                jsonLines[104 - 1] = "}" + "\n"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+            shutil.copy(
+                os.path.join(".", src, "var_standard", "layouts", "tracker.json"),
+                os.path.join(".", src, "layouts", "tracker.json")
             )
-        ) as jsonFile:
-            jsonLines = jsonFile.readlines()
-            for i in range(140, 147):
-                jsonLines[i - 1] = ""
-            jsonLines[140 - 1] = "}" + "\n"
-            jsonFile.seek(0)
-            jsonFile.truncate(0)
-            jsonFile.writelines(jsonLines)
-        with(
-            open(
-                os.path.join(
-                    ".",
-                    src,
-                    "layouts",
-                    "broadcast.json"
-                ),
-                "r+",
-                encoding="utf-8"
-            )
-        ) as jsonFile:
-            jsonLines = jsonFile.readlines()
-            jsonLines[104 - 1] = "}" + "\n"
-            jsonFile.seek(0)
-            jsonFile.truncate(0)
-            jsonFile.writelines(jsonLines)
-        shutil.copy(
-            os.path.join(".", src, "var_standard", "layouts", "tracker.json"),
-            os.path.join(".", src, "layouts", "tracker.json")
-        )
-    print()
+        print()
