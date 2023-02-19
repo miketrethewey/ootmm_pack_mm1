@@ -1,7 +1,7 @@
 # pylint: disable=protected-access
-"""
+'''
 Reset, delete packs, copy packs, bugfixes
-"""
+'''
 
 import os
 import shutil

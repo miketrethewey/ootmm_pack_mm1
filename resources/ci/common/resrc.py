@@ -1,6 +1,6 @@
-"""
+'''
 Run both editing scripts
-"""
+'''
 
 import os
 import subprocess

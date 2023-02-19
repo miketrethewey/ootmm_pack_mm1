@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
-"""
+'''
 Rename and fix sources within functions
-"""
+'''
 
 import os
 import re
@@ -13,30 +13,30 @@ funcMap = {}
 
 
 def check_for_codes(luaLine):
-    """
+    '''
     Check for codes section
-    """
+    '''
     return "local codes" in luaLine.strip()
 
 
 def check_for_items(luaLine):
-    """
+    '''
     Check for items section
-    """
+    '''
     return "--items" in luaLine.strip()
 
 
 def check_for_rewards(luaLine):
-    """
+    '''
     Check for rewards section
-    """
+    '''
     return "local rewards" in luaLine.strip()
 
 
 def check_calls(luaLine):
-    """
+    '''
     Update function calls
-    """
+    '''
     for [funcName, funcNew] in funcMap.items():
         if funcName + "(" in luaLine.strip() and \
                 (funcNew + "(" not in luaLine.strip()):
@@ -109,9 +109,9 @@ def check_calls(luaLine):
 
 
 def check_functions(luaLine):
-    """
+    '''
     Update non-class functions
-    """
+    '''
     match = re.match(r"function ([\w\_]*)(?:[\(])", luaLine)
     if match:
         srch = match.group(1)
@@ -144,9 +144,9 @@ def check_functions(luaLine):
 
 
 def check_images(luaLine):
-    """
+    '''
     Update image filepaths
-    """
+    '''
     match = re.search(r"(?:[\"])(images\/[\w\/\.]*)(?:[\"])", luaLine.strip())
     if match:
         srch = match.group(1)
@@ -160,9 +160,9 @@ def check_images(luaLine):
 
 
 def check_imports(luaLine):
-    """
+    '''
     Update import references
-    """
+    '''
     # Tracker:Add
     match = re.match(
         r"(?:Tracker\:Add)(?:[\w]*)(?:[\(])(?:[\"])([\w\/\.]*)(?:[\"])(?:[\)])",
@@ -185,9 +185,9 @@ def check_imports(luaLine):
 
 
 def check_settings(luaLine):
-    """
+    '''
     Update settings codes
-    """
+    '''
     match = re.search(r"\"(setting|tracker|logic)\_(\w*)\"", luaLine.strip())
     if match:
         srch = match.group(1) + "_" + match.group(2)
@@ -201,9 +201,9 @@ def check_settings(luaLine):
 
 
 def check_files(resrcDirs, loop):
-    """
+    '''
     Iterate through files
-    """
+    '''
     if not loop:
         loop = 1
     for resrcDir in resrcDirs:

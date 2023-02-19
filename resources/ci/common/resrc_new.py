@@ -1,7 +1,7 @@
 # pylint: disable=invalid-name
-"""
+'''
 Rename references in packs
-"""
+'''
 
 import json
 import os
@@ -13,9 +13,9 @@ gameID = ""
 
 
 def recursive_iter(obj, keys=()):
-    """
+    '''
     Recurse through object while collecting keys
-    """
+    '''
     if isinstance(obj, dict):
         for k, v in obj.items():
             yield from recursive_iter(v, keys + (k,))
@@ -27,9 +27,9 @@ def recursive_iter(obj, keys=()):
 
 
 def update_item(item_string):
-    """
+    '''
     Add gameID to item reference
-    """
+    '''
     items = item_string
     if isinstance(item_string, str):
         items = item_string.split(",")
@@ -63,9 +63,9 @@ def update_item(item_string):
 
 
 def check_items(data):
-    """
+    '''
     Manage item references
-    """
+    '''
     keys = data["keys"]
     item = data["item"]
 
@@ -103,9 +103,9 @@ def check_items(data):
 
 
 def check_layouts(data):
-    """
+    '''
     Manage layouts references
-    """
+    '''
     keys = data["keys"]
     item = data["item"]
     resrcDir = data["resrcDir"]
@@ -175,9 +175,9 @@ def check_layouts(data):
 
 
 def check_locations(data):
-    """
+    '''
     Manage locations references
-    """
+    '''
     keys = data["keys"]
     item = data["item"]
 
@@ -210,9 +210,9 @@ def check_locations(data):
 
 
 def check_files(resrcDirs):
-    """
+    '''
     Check files recursively
-    """
+    '''
     # cycle through dirs
     for resrcDir in resrcDirs:
         # cycle through this dir

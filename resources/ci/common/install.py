@@ -1,6 +1,6 @@
-"""
+'''
 Reset, delete packs, copy packs, edit packs
-"""
+'''
 import os
 import subprocess
 

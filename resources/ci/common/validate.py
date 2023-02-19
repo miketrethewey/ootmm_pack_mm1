@@ -1,8 +1,8 @@
 # pylint: disable=unnecessary-pass
 # pylint: disable=invalid-name
-"""
+'''
 Validate JSON against provided schema
-"""
+'''
 import os
 import json
 import ssl
@@ -11,9 +11,9 @@ from pathlib import Path
 from jsonschema import validate, RefResolver
 
 def check_files(resrcDirs):
-    """
+    '''
     Check files recursively
-    """
+    '''
     # cycle through dirs
     for resrcDir in resrcDirs:
         # cycle through this dir

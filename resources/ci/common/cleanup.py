@@ -1,6 +1,6 @@
-"""
+'''
 Revert to base state
-"""
+'''
 import os
 import shutil
 
