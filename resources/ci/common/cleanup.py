@@ -9,11 +9,13 @@ srcs = [
     "mmrando_pink"
 ]
 
-print("Deleting included packs...")
+print("   > Cleaning up from Cleaner...")
+print("    > Deleting included packs...")
 
 for src in srcs:
     rm = os.path.join(".", src)
-    print("REMOVE :", rm)
+    print("     > REMOVING: ", rm)
     if os.path.isdir(rm):
+        print("     > REMOVED :", rm)
         shutil.rmtree(rm)
     print()

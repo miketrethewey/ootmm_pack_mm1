@@ -23,15 +23,15 @@ srcs = {
     }
 }
 
-print("Resetting included packs to installed versions...")
+print("  > Resetting included packs to installed versions...")
 error = False
 
 for src, src_data in srcs.items():
     archive_path = os.path.join("..", src + ".zip")
     if not os.path.isfile(archive_path):
-        print("ERROR: Archive: " + archive_path + " missing!")
+        print("   > ERROR: Archive: " + archive_path + " missing!")
         if "mm" in src:
-            print("GHA can't test MM at this time.")
+            print("   > GHA can't test MM at this time.")
         error = True
         if "ootrando" in src:
             if "url" in src_data:
@@ -45,10 +45,10 @@ for src, src_data in srcs.items():
     if error:
         sys.exit(1)
     else:
-        print("ARCHIVE:", archive_path)
+        print("   > ARCHIVE :", archive_path)
         with(zipfile.ZipFile(archive_path)) as myarchive:
             dest = os.path.join(".", src)
-            print("DEST   :", dest)
+            print("   > DEST    :", dest)
             myarchive.extractall(dest)
 
     if "mm" in src:

@@ -11,6 +11,7 @@ gameID = ""
 
 funcMap = {}
 
+print("   > Re-sourcing Functions from Function Re-sourcer...")
 
 def check_for_codes(luaLine):
     '''

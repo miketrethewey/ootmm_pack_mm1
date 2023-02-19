@@ -11,6 +11,7 @@ import pyjson5
 packUID = ""
 gameID = ""
 
+print("   > Re-sourcing Main from Main Re-sourcer...")
 
 def recursive_iter(obj, keys=()):
     '''

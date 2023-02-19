@@ -9,16 +9,16 @@ runs:
     #   run: |
     #     chmod 755 ./resources/ci/common/install.py
     #     python ./resources/ci/common/install.py
-    # - name: Reset
-    #   shell: bash
-    #   run: |
-    #     chmod 755 ./resources/ci/common/reset.py
-    #     python ./resources/ci/common/reset.py
     - name: Cleanup
       shell: bash
       run: |
         chmod 755 ./resources/ci/common/cleanup.py
         python ./resources/ci/common/cleanup.py
+    - name: Reset
+      shell: bash
+      run: |
+        chmod 755 ./resources/ci/common/reset.py
+        python ./resources/ci/common/reset.py
     # - name: Validate
     #   shell: bash
     #   run: |
