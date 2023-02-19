@@ -33,7 +33,7 @@
           "maps": [
             "child"
           ],
-          "width": 1300
+          "max_width": 1300
         }
       },
       {
@@ -44,7 +44,7 @@
           "maps": [
             "adult"
           ],
-          "width": 1300
+          "max_width": 1300
         }
       },
       {
@@ -57,7 +57,7 @@
             "child",
             "adult"
           ],
-          "width": 1300
+          "max_width": 1300
         }
       },
       {
@@ -68,21 +68,38 @@
           "maps": [
             "termina"
           ],
-          "width": 1300
+          "max_width": 1300
         }
       },
       {
         "title": "All Three",
         "icon": "ootmm/images/mm/items/n64.png",
         "content": {
-          "type": "map",
-          "orientation": "horizontal",
-          "maps": [
-            "child",
-            "adult",
-            "termina"
-          ],
-          "width": 1300
+          "type": "array",
+          "style": "wrap",
+          "content": [
+            {
+              "type": "map",
+              "maps": [
+                "child"
+              ],
+              "max_width": 650
+            },
+            {
+              "type": "map",
+              "maps": [
+                "adult"
+              ],
+              "max_width": 650
+            },
+            {
+              "type": "map",
+              "maps": [
+                "termina"
+              ],
+              "max_width": 650
+            }
+          ]
         }
       }
     ]

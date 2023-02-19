@@ -7,6 +7,7 @@ import os
 import json
 import ssl
 import urllib.request
+import pyjson5
 from pathlib import Path
 from jsonschema import validate, RefResolver
 
@@ -21,6 +22,8 @@ def check_files(resrcDirs):
         for jsonTypeCheck in ["items", "layouts", "locations"]:
             if jsonTypeCheck in resrcDir:
                 jsonType = jsonTypeCheck
+        if "maps" in resrcDir:
+            continue
         if jsonType != "":
             for r, _, f in os.walk(resrcDir):
                 for filename in f:
@@ -28,7 +31,7 @@ def check_files(resrcDirs):
                     filePath = os.path.join(r, filename)
                     print("  " + filePath)
                     with open(filePath, "r", encoding="utf-8") as jsonFile:
-                        fileJSON = json.load(jsonFile)
+                        fileJSON = pyjson5.decode_io(jsonFile)
                         result = validate(
                             instance=fileJSON,
                             schema=schemas["emo"][jsonType],
@@ -45,10 +48,9 @@ def check_files(resrcDirs):
             print()
 
 schemas = {}
-
 schemaSrcs = [
   "https://emotracker.net/developers/schemas/items.json",
-  "https://emotracker.net/developers/schemas/layouts.json",
+  # "https://emotracker.net/developers/schemas/layouts.json",
   "https://emotracker.net/developers/schemas/locations.json"
 ]
 
@@ -68,19 +70,20 @@ print("LOAD SCHEMAS")
 schemaAbsPath = os.path.abspath(schemaDir)
 schemaURI = Path(schemaAbsPath).as_uri() + "/"
 for schemaFileName in os.listdir(schemaDir):
-    with open(
-        os.path.join(
-            schemaDir,
-            schemaFileName
-        ),
-        "r",
-        encoding="utf-8"
-    ) as schemaFile:
-        gameKey = "emo"
-        schemaKey = schemaFileName.replace(".json", "")
-        if gameKey not in schemas:
-            schemas[gameKey] = {}
-        schemas[gameKey][schemaKey] = json.load(schemaFile)
+    if os.path.isfile(os.path.join(schemaDir, schemaFileName)):
+        with open(
+            os.path.join(
+                schemaDir,
+                schemaFileName
+            ),
+            "r",
+            encoding="utf-8"
+        ) as schemaFile:
+            gameKey = "emo"
+            schemaKey = schemaFileName.replace(".json", "")
+            if gameKey not in schemas:
+                schemas[gameKey] = {}
+            schemas[gameKey][schemaKey] = json.load(schemaFile)
 
 print("VALIDATE")
 srcs = {
@@ -128,27 +131,3 @@ for [gameID, packData] in srcs.items():
             }
             # print(resrcDirs)
             check_files(resrcDirs)
-
-# root
-for rootType in [
-    "helpers",
-    "items",
-    "tech"
-]:
-    print(" " + rootType.upper())
-    filePath = os.path.join(".", rootType + ".json")
-    print("  " + filePath)
-    with open(filePath, "r", encoding="utf-8") as jsonFile:
-        fileJSON = json.load(jsonFile)
-        result = validate(
-            instance=fileJSON,
-            schema=schemas["m3"][rootType],
-            resolver=RefResolver(
-                base_uri=schemaURI,
-                referrer=schemas["m3"][rootType]
-            )
-        )
-        if result:
-            print("     " + "INVALID")
-            pass
-    print()

@@ -51,9 +51,49 @@ for src, src_data in srcs.items():
             dest = os.path.join(".", src)
             print("   > DEST    :", dest)
             myarchive.extractall(dest)
+            print()
 
     if os.path.isdir(os.path.join(".", src)):
         if "mm" in src:
+            # ./[mm]/items/dungeon_items.json
+            # Vanilla button "true" to true
+            '''
+    "loop": "true",
+            '''
+            print("   > BUGFIX  : ./[mm]/items/dungeon_items.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "items",
+                        "dungeon_items.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                for i in range(2400, 2410):
+                    if i < len(jsonLines) and "\"true\"" in jsonLines[i]:
+                        jsonLines[i] = jsonLines[i].replace("\"true\"", "true")
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+
+            # ./[mm]/items/options.json
+            # Fix last array element that doesn't fit a dict
+            '''
+  },
+  [
+
+
+
+
+  ]
+]
+            '''
+            print("   > BUGFIX  : ./[mm]/items/options.json")
             with(
                 open(
                     os.path.join(
@@ -73,6 +113,20 @@ for src, src_data in srcs.items():
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
                 jsonFile.writelines(jsonLines)
+
+            # ./[mm]/layouts/broadcast.json
+            # Fix trailing comma
+            '''
+					  {
+						"type": "item",
+						"item": "bombers_code5",
+						"margin": "1,4",
+						"width": 12,
+						"height": 16
+					  },
+					]
+            '''
+            print("   > BUGFIX  : ./[mm]/layouts/broadcast.json")
             with(
                 open(
                     os.path.join(
@@ -90,8 +144,125 @@ for src, src_data in srcs.items():
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
                 jsonFile.writelines(jsonLines)
+
+            # ./[mm]/locations/overworld.json
+            # Remove empty element
+            '''
+      },
+      {}
+    ]
+  },
+            '''
+            print("   > BUGFIX  : ./[mm]/locations/overworld.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "locations",
+                        "overworld.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                jsonLines[3569 - 1] = "" + "\n"
+                jsonLines[3570 - 1] = "" + "\n"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+
+
+            # ./[mm]/var_accessible/locations/overworld.json
+            # Remove empty element
+            '''
+      },
+      {}
+    ]
+  },
+            '''
+            print("   > BUGFIX  : ./[mm]/var_accessible/locations/overworld.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "var_accessible",
+                        "locations",
+                        "overworld.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                for i in range(2280, 2290):
+                    if "\"$has_projectile\"" in jsonLines[i - 1]:
+                        jsonLines[i - 1] = jsonLines[i - 1].replace("\"$has_projectile\"", "[\"$has_projectile\"]")
+                jsonLines[2569 - 1] = "" + "\n"
+                jsonLines[2570 - 1] = "" + "\n"
+                for i in range(3990, 4010):
+                    if "\"[$has_explosives]\"" in jsonLines[i - 1]:
+                        jsonLines[i - 1] = jsonLines[i - 1].replace("\"[$has_explosives]\"", "[\"[$has_explosives]\"]")
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+
+            # ./[mm]/var_standard/layouts/tracker.json
+            # Fix int to string
+            '''
+            '''
+            print("   > BUGFIX  : ./[mm]/var_standard/layouts/tracker.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "var_standard",
+                        "layouts",
+                        "tracker.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                for i in range(5, 15):
+                    if i < len(jsonLines) and str(10) in jsonLines[i]:
+                        jsonLines[i] = jsonLines[i].replace(str(10), "\"10\"")
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+
+            # ./[mm]/var_minimal/layouts/tracker.json
+            # Fix int to string
+            '''
+            '''
+            print("   > BUGFIX  : ./[mm]/var_minimal/layouts/tracker.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "var_minimal",
+                        "layouts",
+                        "tracker.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonLines = jsonFile.readlines()
+                for i in range(270, 300):
+                    if i < len(jsonLines) and str(10) in jsonLines[i - 1]:
+                        jsonLines[i - 1] = jsonLines[i - 1].replace(str(10), "\"10\"")
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.writelines(jsonLines)
+
+            print("   > COPY    : Standard tracker to global tracker")
             shutil.copy(
                 os.path.join(".", src, "var_standard", "layouts", "tracker.json"),
                 os.path.join(".", src, "layouts", "tracker.json")
             )
-        print()

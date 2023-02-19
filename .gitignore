@@ -1,2 +1,5 @@
 /mmrando_pink/
 /ootrando_overworldmap_hamsda/
+
+/schema/*
+!/schema/layouts.json

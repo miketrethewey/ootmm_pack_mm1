@@ -43,6 +43,8 @@ def update_item(item_string):
             r"(?P<Name>[\w\s]*)" +
             r"(?P<func_split>[\|\:]?)" +
             r"(?P<func_arg>[\w\s]*|[\d]{0,3})" +
+            r"(?P<func_split2>[\|\:]?)" +
+            r"(?P<func_arg2>[\w\s]*|[\d]{0,3})" +
             r"(?P<post>[\]\}]?)" +
             r"(?:[\"\,]{0,2})$",
             item
@@ -52,11 +54,16 @@ def update_item(item_string):
         # 2: Item Name
         # 3: func split
         # 4: func arg
-        # 5: post-symbol
+        # 5: func split2
+        # 6: func arg2
+        # 7: post-symbol
         if match:
             if not match["Name"].startswith(gameID + "_"):
-                item = match["pre"] + gameID + "_" + match["Name"] + \
-                    match["func_split"] + match["func_arg"] + match["post"]
+                item = match["pre"] + \
+                    gameID + "_" + match["Name"] + \
+                    match["func_split"] + match["func_arg"] + \
+                    match["func_split2"] + match["func_arg2"] + \
+                    match["post"]
                 # print(item)
         items[i] = item
     item_string = ",".join(items)
@@ -156,6 +163,7 @@ def check_layouts(data):
     # layout:settings refs
     if ("access_rules" in keys) or \
         ("visibility_rules" in keys) or \
+        ("force_invisibility_rules" in keys) or \
             ("item" in keys):
         itemCheck = update_item(item)
         if itemCheck != item:
