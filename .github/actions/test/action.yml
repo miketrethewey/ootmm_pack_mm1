@@ -1,0 +1,10 @@
+name: ⏱️Test
+description: Test app
+
+runs:
+  using: "composite"
+  steps:
+    - name: Test
+      shell: bash
+      run: |
+        python ./resources/ci/common/install.py

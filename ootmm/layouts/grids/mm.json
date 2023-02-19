@@ -1,0 +1,15 @@
+{
+  "mm_grid": {
+    "type": "dock",
+    "content": [
+      {
+        "type": "group",
+        "header": "Items",
+        "content": {
+          "type": "layout",
+          "key": "mm_shared_item_grid"
+        }
+      }
+    ]
+  }
+}

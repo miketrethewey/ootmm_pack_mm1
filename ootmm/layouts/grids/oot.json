@@ -1,0 +1,53 @@
+{
+  "oot_grid": {
+    "type": "dock",
+    "content": [
+      {
+        "type": "group",
+        "header": "Items",
+        "dock": "top",
+        "header_content": {
+          "type": "button_popup",
+          "style": "settings",
+          "popup_background": "#FF212121",
+          "layout": "oot_options_popup"
+        },
+        "content": {
+          "type": "layout",
+          "key": "oot_item_grid_tall"
+        }
+      },
+      {
+        "type": "group",
+        "header": "Counters",
+        "dock": "top",
+        "content": {
+          "type": "layout",
+          "key": "oot_counters_tall"
+        }
+      },
+      {
+        "type": "group",
+        "header": "Presets",
+        "dock": "top",
+        "content": {
+          "type": "item",
+          "item": "presets",
+          "h_alignment": "left",
+          "v_alignment": "top",
+          "margin": "5",
+          "width": 32,
+          "height": 32
+        }
+      },
+      {
+        "type": "group",
+        "header": "Pinned Locations",
+        "dock": "top",
+        "content": {
+          "type": "recentpins"
+        }
+      }
+    ]
+  }
+}

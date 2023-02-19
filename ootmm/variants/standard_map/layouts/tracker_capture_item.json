@@ -1,0 +1,34 @@
+{
+  "tracker_capture_item": {
+    "type": "container",
+    "h_alignment": "center",
+    "content": {
+      "type": "tabbed",
+      "tabs": [
+        {
+          "title": "Ocarina of Time",
+          "icon": "ootrando_overworldmap_hamsda/images/ocarina.png",
+          "content": {
+            "type": "group",
+            "header": "Items",
+            "dock": "top",
+            "content": {
+              "type": "layout",
+              "key": "oot_item_grid_tall"
+            },
+            "width": 325
+          }
+        },
+        {
+          "title": "Majora's Mask",
+          "icon": "ootmm/images/mm/items/MM_Majora's_Mask_Model.png",
+          "content": {
+            "type": "layout",
+            "key": "mm_grid",
+            "width": 325
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+oot:
+ ./scripts/custom_dungeon_reward.lua
+ ./scripts/custom_song_item.lua
+ ./scripts/user_presets.lua

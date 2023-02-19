@@ -1,0 +1,22 @@
+{
+  "tracker_default": {
+    "type": "container",
+    "h_alignment": "center",
+    "content": {
+      "type": "array",
+      "orientation": "horizontal",
+      "content": [
+        {
+          "name": "OoT & MM Inventory",
+          "type": "layout",
+          "key": "shared_item_grid"
+        },
+        {
+          "name": "OoT & MM Maps",
+          "type": "layout",
+          "key": "shared_map_pane"
+        }
+      ]
+    }
+  }
+}
