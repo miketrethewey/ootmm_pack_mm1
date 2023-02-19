@@ -7,4 +7,11 @@ runs:
     - name: Test
       shell: bash
       run: |
+        chmod 755 ./resources/ci/common/install.py
+        chmod 755 ./resources/ci/common/reset.py
+        chmod 755 ./resources/ci/common/cleanup.py
+        chmod 755 ./resources/ci/common/resrc.py
+        chmod 755 ./resources/ci/common/validate.py
+        chmod 755 ./resources/ci/common/resrc_new.py
+        chmod 755 ./resources/ci/common/resrc_funcs.py
         python ./resources/ci/common/install.py
