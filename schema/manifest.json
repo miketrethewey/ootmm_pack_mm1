@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "manifest.json",
+  "type": "object",
+  "title": "EmoTracker: Package Manifest",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "required": [
+    "name",
+    "author",
+    "game_name",
+    "platform",
+    "package_version",
+    "package_uid"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "Package Name",
+      "description": "",
+      "default": ""
+    },
+    "game_name": {
+      "$id": "#/properties/game_name",
+      "type": "string",
+      "title": "Game Name",
+      "description": "Name of game to list this package under.",
+      "default": "",
+      "examples": [
+        "A Link to the Past Randomizer"
+      ]
+    },
+    "platform": {
+      "$id": "#/properties/platform",
+      "type": "string",
+      "title": "Platform ID.",
+      "description": "Internal platform ID of package. Usually useful for identifying auto-tracking type.",
+      "default": "",
+      "enum": [
+        "gameboy",
+        "gba",
+        "nes",
+        "n64",
+        "pc",
+        "snes"
+      ],
+      "examples": [
+        "snes"
+      ]
+    },
+    "package_version": {
+      "$id": "#/properties/package_version",
+      "type": "string",
+      "title": "Version Number",
+      "description": "Package Manager checks against this number to inform user if there's a newer version available.",
+      "default": ""
+    },
+    "package_uid": {
+      "$id": "#/properties/package_uid",
+      "type": "string",
+      "title": "Unique ID string for this package.",
+      "description": "",
+      "default": ""
+    },
+    "author": {
+      "$id": "#/properties/author",
+      "type": "string",
+      "title": "Package Author",
+      "description": "",
+      "default": ""
+    },
+    "variants": {
+      "$id": "#/properties/variants",
+      "type": "object",
+      "title": "Variants available in this package.",
+      "description": "",
+      "default": {},
+      "properties": {
+        "display_name": {
+          "$id": "#/properties/variants/properties/display_name",
+          "type": "string",
+          "title": "Display Name.",
+          "description": "Name that appears in various menus.",
+          "default": ""
+        },
+        "flags": {
+          "$id": "#/properties/variants/properties/flags",
+          "type": "array",
+          "title": "Flags of abilities of this pack.",
+          "description": "",
+          "default": [],
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/variants/properties/flags/properties/items",
+            "anyOf": [
+              {
+                "$id": "#/properties/variants/properties/flags/items/anyOf/0",
+                "type": "string",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "enum": [
+                  "autotracker",
+                  "chathud",
+                  "map",
+                  "pins"
+                ],
+                "examples": [
+                  "autotracker",
+                  "chathud",
+                  "map",
+                  "pins"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

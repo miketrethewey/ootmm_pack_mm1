@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "repository.json",
+  "type": "object",
+  "title": "EmoTracker: Repository Manifest",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "required": [
+    "name",
+    "packages"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "Repository Name",
+      "description": "Name of this repository of EmoTracker Tracker Packs.",
+      "default": ""
+    },
+    "packages": {
+      "$id": "#/properties/packages",
+      "type": "array",
+      "title": "Repository Packages",
+      "description": "List of packages in this repository.",
+      "default": [],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/packages/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/packages/items/anyOf/0",
+            "type": "object",
+            "title": "Package",
+            "description": "A single package.",
+            "default": {},
+            "required": [
+              "name",
+              "author",
+              "game_name",
+              "version",
+              "uid",
+              "flags",
+              "link"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/name",
+                "type": "string",
+                "title": "Package Name",
+                "description": "",
+                "default": ""
+              },
+              "author": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/author",
+                "type": "string",
+                "title": "Package Author",
+                "description": "",
+                "default": ""
+              },
+              "game_name": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/game_name",
+                "type": "string",
+                "title": "Game Name",
+                "description": "Name of game to list this package under.",
+                "default": "",
+                "examples": [
+                  "A Link to the Past Randomizer"
+                ]
+              },
+              "version": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/version",
+                "type": "string",
+                "title": "Version Number",
+                "description": "Package Manager checks against this number to inform user if there's a newer version available.",
+                "default": ""
+              },
+              "uid": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/uid",
+                "type": "string",
+                "title": "Unique ID string for this package.",
+                "description": "",
+                "default": ""
+              },
+              "flags": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/flags",
+                "type": "array",
+                "title": "Flags of abilities of this pack.",
+                "description": "",
+                "default": [],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/packages/items/anyOf/0/properties/flags/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/packages/items/anyOf/0/properties/flags/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "enum": [
+                        "autotracker",
+                        "chathud",
+                        "map",
+                        "pins"
+                      ],
+                      "examples": [
+                        "autotracker",
+                        "chathud",
+                        "map",
+                        "pins"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required_app_version": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/required_app_version",
+                "type": "string",
+                "title": "Version number of EmoTracker required.",
+                "description": "",
+                "default": ""
+              },
+              "documentation_url": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/documentation_url",
+                "type": "string",
+                "title": "URL to documentation for package.",
+                "description": "",
+                "default": ""
+              },
+              "link": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/link",
+                "type": "string",
+                "title": "URL to download this package.",
+                "description": "",
+                "default": ""
+              },
+              "variants": {
+                "$id": "#/properties/packages/items/anyOf/0/properties/variants",
+                "type": "array",
+                "title": "Variants available in this package.",
+                "description": "",
+                "default": [],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/packages/items/anyOf/0/properties/variants/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/packages/items/anyOf/0/properties/variants/items/anyOf/0",
+                      "type": "object",
+                      "title": "Variant",
+                      "description": "",
+                      "default": {},
+                      "required": [
+                        "name",
+                        "flags"
+                      ],
+                      "properties": {
+                        "name": {
+                          "$id": "#/properties/packages/items/anyOf/0/properties/variants/items/anyOf/0/properties/name",
+                          "type": "string",
+                          "title": "Variant Name",
+                          "description": "",
+                          "default": ""
+                        },
+                        "flags": {
+                          "$id": "#/properties/packages/items/anyOf/0/properties/variants/items/anyOf/0/properties/flags",
+                          "type": "array",
+                          "title": "Flags of abilities in this Variant.",
+                          "description": "",
+                          "default": [],
+                          "additionalItems": true,
+                          "items": {
+                            "$id": "#/properties/packages/items/anyOf/0/properties/variants/items/anyOf/0/properties/flags/items",
+                            "anyOf": [
+                              {
+                                "$id": "#/properties/packages/items/anyOf/0/properties/variants/items/anyOf/0/properties/flags/items/anyOf/0",
+                                "type": "string",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "enum": [
+                                  "autotracker",
+                                  "chathud",
+                                  "map",
+                                  "pins"
+                                ],
+                                "examples": [
+                                  "autotracker",
+                                  "chathud",
+                                  "map",
+                                  "pins"
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  ]
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
