@@ -11,6 +11,7 @@ gameID = ""
 
 funcMap = {}
 
+print("  > Starting Function Re-sourcer...")
 print("   > Re-sourcing Functions from Function Re-sourcer...")
 
 def check_for_codes(luaLine):
@@ -213,7 +214,7 @@ def check_files(resrcDirs, loop):
                 if "sdk" in r:
                     pass
                 else:
-                    print(r, filename)
+                    print("    " + r, filename)
                     with(open(os.path.join(r, filename), "r+", encoding="utf-8")) as luaFile:
                         luaLines = luaFile.readlines()
                         hasCodes = False
@@ -279,7 +280,7 @@ for [gameID, packData] in srcs.items():
     packUID = packData["packUID"]
     variants = packData["variants"]
     if os.path.isdir(os.path.join(".", packUID)):
-        print(gameID, packUID)
+        print("    " + gameID, packUID)
         resrcDirs = [
             os.path.join(".", packUID, "scripts")
         ]
@@ -290,3 +291,4 @@ for [gameID, packData] in srcs.items():
         check_files(resrcDirs, 1)
         check_files(resrcDirs, 2)
         # print(funcMap)
+        print()

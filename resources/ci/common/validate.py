@@ -6,10 +6,24 @@ Validate JSON against provided schema
 import os
 import json
 import ssl
+import sys
 import urllib.request
-import pyjson5
+
+print("  > Starting Validator...")
+
+try:
+    import pyjson5
+except ImportError:
+    print("   > pyjson5 not installed!")
+    sys.exit(1)
+
 from pathlib import Path
-from jsonschema import validate, RefResolver
+
+try:
+    from jsonschema import validate, RefResolver
+except ImportError:
+    print("   > jsonschema not installed!")
+    sys.exit(1)
 
 def check_files(resrcDirs):
     '''
@@ -29,7 +43,7 @@ def check_files(resrcDirs):
                 for filename in f:
                     # open file
                     filePath = os.path.join(r, filename)
-                    print("  " + filePath)
+                    print("    " + filePath)
                     with open(filePath, "r", encoding="utf-8") as jsonFile:
                         fileJSON = pyjson5.decode_io(jsonFile)
                         result = validate(
@@ -55,7 +69,7 @@ schemaSrcs = [
 ]
 
 schemaDir = os.path.join(".", "schema")
-print("DOWNLOAD SCHEMAS")
+print("   > DOWNLOAD SCHEMAS")
 if not os.path.isdir(schemaDir):
     os.makedirs(schemaDir)
 for url in schemaSrcs:
@@ -66,7 +80,7 @@ for url in schemaSrcs:
         with open(os.path.join(schemaDir, os.path.basename(url)), "wb") as schema_file:
             schema_file.write(schema_data)
 
-print("LOAD SCHEMAS")
+print("   > LOAD SCHEMAS")
 schemaAbsPath = os.path.abspath(schemaDir)
 schemaURI = Path(schemaAbsPath).as_uri() + "/"
 for schemaFileName in os.listdir(schemaDir):
@@ -85,7 +99,7 @@ for schemaFileName in os.listdir(schemaDir):
                 schemas[gameKey] = {}
             schemas[gameKey][schemaKey] = json.load(schemaFile)
 
-print("VALIDATE")
+print("   > VALIDATE")
 srcs = {
     "oot": {
         "packUID": "ootrando_overworldmap_hamsda",
@@ -110,7 +124,7 @@ for [gameID, packData] in srcs.items():
     packUID = packData["packUID"]
     variants = packData["variants"]
     if os.path.isdir(os.path.join(".", packUID)):
-        print(gameID, packUID)
+        print("    " + gameID, packUID)
         layoutKeyMap = {}
         resrcDirs = [
             os.path.join(".", packUID, "items"),
@@ -131,3 +145,4 @@ for [gameID, packData] in srcs.items():
             }
             # print(resrcDirs)
             check_files(resrcDirs)
+        print()

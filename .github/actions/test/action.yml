@@ -4,33 +4,33 @@ description: Test app
 runs:
   using: "composite"
   steps:
-    # - name: Install
+    - name: Install
+      shell: bash
+      run: |
+        chmod 755 ./resources/ci/common/install.py
+        python ./resources/ci/common/install.py
+    # - name: Cleanup
     #   shell: bash
     #   run: |
-    #     chmod 755 ./resources/ci/common/install.py
-    #     python ./resources/ci/common/install.py
-    - name: Cleanup
-      shell: bash
-      run: |
-        chmod 755 ./resources/ci/common/cleanup.py
-        python ./resources/ci/common/cleanup.py
-    - name: Reset
-      shell: bash
-      run: |
-        chmod 755 ./resources/ci/common/reset.py
-        python ./resources/ci/common/reset.py
-    - name: Validate
-      shell: bash
-      run: |
-        chmod 755 ./resources/ci/common/validate.py
-        python ./resources/ci/common/validate.py
-    - name: Re-source Main
-      shell: bash
-      run: |
-        chmod 755 ./resources/ci/common/resrc_new.py
-        python ./resources/ci/common/resrc_new.py
-    - name: Re-source Functions
-      shell: bash
-      run: |
-        chmod 755 ./resources/ci/common/resrc_funcs.py
-        python ./resources/ci/common/resrc_funcs.py
+    #     chmod 755 ./resources/ci/common/cleanup.py
+    #     python ./resources/ci/common/cleanup.py
+    # - name: Reset
+    #   shell: bash
+    #   run: |
+    #     chmod 755 ./resources/ci/common/reset.py
+    #     python ./resources/ci/common/reset.py
+    # - name: Validate
+    #   shell: bash
+    #   run: |
+    #     chmod 755 ./resources/ci/common/validate.py
+    #     python ./resources/ci/common/validate.py
+    # - name: Re-source Main
+    #   shell: bash
+    #   run: |
+    #     chmod 755 ./resources/ci/common/resrc_new.py
+    #     python ./resources/ci/common/resrc_new.py
+    # - name: Re-source Functions
+    #   shell: bash
+    #   run: |
+    #     chmod 755 ./resources/ci/common/resrc_funcs.py
+    #     python ./resources/ci/common/resrc_funcs.py

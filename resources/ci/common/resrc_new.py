@@ -6,7 +6,15 @@ Rename references in packs
 import json
 import os
 import re
-import pyjson5
+import sys
+
+print("  > Starting Main Re-sourcer...")
+
+try:
+    import pyjson5
+except ImportError:
+    print("   > pyjson5 not installed!")
+    sys.exit(1)
 
 packUID = ""
 gameID = ""
@@ -230,7 +238,7 @@ def check_files(resrcDirs):
                 # open file
                 with(open(os.path.join(r, filename), "r+", encoding="utf-8")) as defnFile:
                     # print filename
-                    print(r, filename)
+                    print("    " + r, filename)
                     # parse JSON
                     defnJSON = pyjson5.decode_io(defnFile)
 
@@ -349,7 +357,7 @@ for [gameID, packData] in srcs.items():
     packUID = packData["packUID"]
     variants = packData["variants"]
     if os.path.isdir(os.path.join(".", packUID)):
-        print(gameID, packUID)
+        print("    " + gameID, packUID)
         layoutKeyMap = {}
         resrcDirs = [
             os.path.join(".", packUID, "items"),
@@ -370,3 +378,4 @@ for [gameID, packData] in srcs.items():
             }
             # print(resrcDirs)
             check_files(resrcDirs)
+        print()
