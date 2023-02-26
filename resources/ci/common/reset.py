@@ -3,6 +3,7 @@
 Reset, delete packs, copy packs, bugfixes
 '''
 
+import json
 import os
 import shutil
 import ssl
@@ -65,6 +66,28 @@ for src, src_data in srcs.items():
 
     if os.path.isdir(os.path.join(".", src)):
         if "mm" in src:
+            # ./[mm]/manifest.json
+            # Add platform ID
+            '''
+            '''
+            print("   > BUGFIX  : ./[mm]/manifest.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "manifest.json"
+                    ),
+                    "r+",
+                    encoding="utf-8-sig"
+                )
+            ) as jsonFile:
+                manifestJSON = json.load(jsonFile)
+                manifestJSON["platform"] = "snes"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                json.dump(manifestJSON, jsonFile, indent=2)
+
             # ./[mm]/items/dungeon_items.json
             # Vanilla button "true" to true
             '''
@@ -276,3 +299,26 @@ for src, src_data in srcs.items():
                 os.path.join(".", src, "var_standard", "layouts", "tracker.json"),
                 os.path.join(".", src, "layouts", "tracker.json")
             )
+        elif "ootrando" in src:
+            # ./[oot]/manifest.json
+            # Add platform ID
+            '''
+            '''
+            print("   > BUGFIX  : ./[oot]/manifest.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "manifest.json"
+                    ),
+                    "r+",
+                    encoding="utf-8-sig"
+                )
+            ) as jsonFile:
+                manifestJSON = json.load(jsonFile)
+                manifestJSON["platform"] = "snes"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                json.dump(manifestJSON, jsonFile, indent=2)
+    print()

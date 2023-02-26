@@ -1,6 +1,7 @@
 {
   "name": "OoT-MM Randomizer - Map and Item Tracker",
   "game_name": "Ocarina of Time & Majora's Mask Randomizer",
+  "platform": "n64",
   "package_version": "0.0.1",
   "package_uid": "ootmm_pack_mm1",
   "author": "Minnie A. Trethewey",
