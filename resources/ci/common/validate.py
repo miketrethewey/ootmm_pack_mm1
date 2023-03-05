@@ -73,7 +73,7 @@ def check_files(resrcDirs):
 schemas = {}
 schemaSrcs = [
   "https://emotracker.net/developers/schemas/items.json",
-  # "https://emotracker.net/developers/schemas/layouts.json",
+  "https://emotracker.net/developers/schemas/layouts.json",
   "https://emotracker.net/developers/schemas/locations.json"
 ]
 
