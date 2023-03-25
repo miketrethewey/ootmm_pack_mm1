@@ -258,34 +258,47 @@ def check_files(resrcDirs, loop):
 srcs = {
     "oot": {
         "packUID": "ootrando_overworldmap_hamsda",
-        "variants": [
-            "var_itemsonly",
-            "var_itemsonly_keysanity",
-            "var_minimalist"
-        ]
+        "variants": []
     },
     "mm": {
         "packUID": "mmrando_pink",
-        "variants": [
-            "var_accessible",
-            "var_maptracker",
-            "var_minimal",
-            "var_standard"
-        ]
+        "variants": []
+    },
+    "": {
+        "packUID": "",
+        "variants": []
     }
 }
 
 for [gameID, packData] in srcs.items():
-    funcMap = {}
+    packUID = packData["packUID"]
+    if os.path.isdir(os.path.join(".", packUID, "variants")):
+        srcs[gameID]["variants"] = os.listdir(os.path.join(".", packUID, "variants"))
+    elif os.path.isdir(os.path.join(".", packUID)):
+        for folder in os.listdir(os.path.join(".", packUID)):
+            if "var_" in folder:
+                thisDir = folder
+                srcs[gameID]["variants"].append(thisDir)
+
+for [gameID, packData] in srcs.items():
     packUID = packData["packUID"]
     variants = packData["variants"]
-    if os.path.isdir(os.path.join(".", packUID)):
-        print("    " + gameID, packUID)
+    packRoot = os.path.join(".", packUID)
+    if os.path.isdir(packRoot):
+        print("    " + (gameID if gameID != "" else "root"), packUID)
+        funcMap = {}
         resrcDirs = [
             os.path.join(".", packUID, "scripts")
         ]
         for variant in variants:
-            resrcDirs.append(os.path.join(".", packUID, variant, "scripts"))
+            varRoot = packRoot
+            if "var_" in variant:
+                varRoot = os.path.join(varRoot, variant)
+            else:
+                varRoot = os.path.join(varRoot, "variants", variant)
+            if os.path.isdir(varRoot):
+                funcMap = {}
+                resrcDirs.append(os.path.join(".", packUID, variant, "scripts"))
         # print(resrcDirs)
 
         check_files(resrcDirs, 1)

@@ -3,6 +3,7 @@
 
 # no schemas
 /schema/*
-# But do keep manifest, repository schema
+# But do keep layouts, manifest, repository schema
+!/schema/layouts.json
 !/schema/manifest.json
 !/schema/repository.json

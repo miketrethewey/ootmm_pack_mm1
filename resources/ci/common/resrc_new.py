@@ -336,28 +336,34 @@ def check_files(resrcDirs):
 srcs = {
     "oot": {
         "packUID": "ootrando_overworldmap_hamsda",
-        "variants": [
-            "var_itemsonly",
-            "var_itemsonly_keysanity",
-            "var_minimalist"
-        ]
+        "variants": []
     },
     "mm": {
         "packUID": "mmrando_pink",
-        "variants": [
-            "var_accessible",
-            "var_maptracker",
-            "var_minimal",
-            "var_standard"
-        ]
+        "variants": []
+    },
+    "": {
+        "packUID": "",
+        "variants": []
     }
 }
 
 for [gameID, packData] in srcs.items():
     packUID = packData["packUID"]
+    if os.path.isdir(os.path.join(".", packUID, "variants")):
+        srcs[gameID]["variants"] = os.listdir(os.path.join(".", packUID, "variants"))
+    elif os.path.isdir(os.path.join(".", packUID)):
+        for folder in os.listdir(os.path.join(".", packUID)):
+            if "var_" in folder:
+                thisDir = folder
+                srcs[gameID]["variants"].append(thisDir)
+
+for [gameID, packData] in srcs.items():
+    packUID = packData["packUID"]
     variants = packData["variants"]
-    if os.path.isdir(os.path.join(".", packUID)):
-        print("    " + gameID, packUID)
+    packRoot = os.path.join(".", packUID)
+    if os.path.isdir(packRoot):
+        print("    " + (gameID if gameID != "" else "root"), packUID)
         layoutKeyMap = {}
         resrcDirs = [
             os.path.join(".", packUID, "items"),
@@ -369,13 +375,19 @@ for [gameID, packData] in srcs.items():
         check_files(resrcDirs)
 
         for variant in variants:
-            layoutKeyMap = {}
-            resrcDirs = {
-                os.path.join(".", packUID, variant, "items"),
-                os.path.join(".", packUID, variant, "layouts"),
-                os.path.join(".", packUID, variant, "locations"),
-                os.path.join(".", packUID, variant, "maps")
-            }
-            # print(resrcDirs)
-            check_files(resrcDirs)
+            varRoot = packRoot
+            if "var_" in variant:
+                varRoot = os.path.join(varRoot, variant)
+            else:
+                varRoot = os.path.join(varRoot, "variants", variant)
+            if os.path.isdir(varRoot):
+                layoutKeyMap = {}
+                resrcDirs = {
+                    os.path.join(".", packUID, variant, "items"),
+                    os.path.join(".", packUID, variant, "layouts"),
+                    os.path.join(".", packUID, variant, "locations"),
+                    os.path.join(".", packUID, variant, "maps")
+                }
+                # print(resrcDirs)
+                check_files(resrcDirs)
         print()
