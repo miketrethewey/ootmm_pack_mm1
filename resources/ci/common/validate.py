@@ -86,6 +86,7 @@ for url in schemaSrcs:
     schema_req = urllib.request.urlopen(url, context=context)
     schema_data = schema_req.read()
     if not os.path.isfile(os.path.join(schemaDir, os.path.basename(url))):
+        print(f"    > SCHEMA: {os.path.basename(url)}")
         with open(os.path.join(schemaDir, os.path.basename(url)), "wb") as schema_file:
             schema_file.write(schema_data)
 

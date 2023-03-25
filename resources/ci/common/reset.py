@@ -11,6 +11,7 @@ import subprocess
 import sys
 import urllib.request
 import zipfile
+import pyjson5
 
 print("  > Cleaning up from Resetter...")
 subprocess.call(
@@ -83,10 +84,10 @@ for src, src_data in srcs.items():
                 )
             ) as jsonFile:
                 manifestJSON = json.load(jsonFile)
-                manifestJSON["platform"] = "snes"
+                manifestJSON["platform"] = "n64"
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
-                json.dump(manifestJSON, jsonFile, indent=2)
+                jsonFile.write(json.dumps(manifestJSON, indent=2))
 
             # ./[mm]/items/dungeon_items.json
             # Vanilla button "true" to true
@@ -103,7 +104,7 @@ for src, src_data in srcs.items():
                         "dungeon_items.json"
                     ),
                     "r+",
-                    encoding="utf-8"
+                    encoding="utf-8-sig"
                 )
             ) as jsonFile:
                 jsonLines = jsonFile.readlines()
@@ -113,6 +114,32 @@ for src, src_data in srcs.items():
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
                 jsonFile.writelines(jsonLines)
+
+            # ./[mm]/items/dungeon_items.json
+            # Update logic for Combo Rando
+            '''
+            '''
+            print("   > HOTFIX  : ./[mm]/items/dungeon_items.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "items",
+                        "dungeon_items.json"
+                    ),
+                    "r+",
+                    encoding="utf-8-sig"
+                )
+            ) as jsonFile:
+                jsonData = pyjson5.decode_io(jsonFile)
+                for item in jsonData:
+                    if "name" in item:
+                        if item["name"] in [ "Ocarina", "Song of Time" ]:
+                            item["initial_active_state"] = False
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.write(json.dumps(jsonData, indent=2))
 
             # ./[mm]/items/options.json
             # Fix last array element that doesn't fit a dict
@@ -242,6 +269,38 @@ for src, src_data in srcs.items():
                 jsonFile.truncate(0)
                 jsonFile.writelines(jsonLines)
 
+            # ./[mm]/locations/overworld.json
+            # Add Rando access requirements for MM
+            '''
+            '''
+            print("   > HOTFIX  : ./[mm]/locations/overworld.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "locations",
+                        "overworld.json"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as jsonFile:
+                jsonData = pyjson5.decode_io(jsonFile)
+                jsonData.insert(
+                    0,
+                    {
+                        "name": "Termina",
+                        "access_rules": [ "mm_ocarina,mm_time" ]
+                    }
+                )
+                jsonData[1]["parent"] = "Termina"
+                jsonData[2]["parent"] = "Termina"
+                jsonData[3]["parent"] = "Termina"
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.write(json.dumps(jsonData))
+
             # ./[mm]/var_standard/layouts/tracker.json
             # Fix int to string
             '''
@@ -317,8 +376,8 @@ for src, src_data in srcs.items():
                 )
             ) as jsonFile:
                 manifestJSON = json.load(jsonFile)
-                manifestJSON["platform"] = "snes"
+                manifestJSON["platform"] = "n64"
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
-                json.dump(manifestJSON, jsonFile, indent=2)
+                jsonFile.write(json.dumps(manifestJSON, indent=2))
     print()

@@ -11,6 +11,10 @@ ScriptHost:LoadScript("ootrando_overworldmap_hamsda/scripts/init.lua")
 print("Load MM Init")
 ScriptHost:LoadScript("mmrando_pink/scripts/init.lua")
 
+-- Items
+print("Loading Items")
+Tracker:AddItems("ootmm/items/items.json")
+
 -- Grids
 print("Loading Grids")
 Tracker:AddLayouts("ootmm/variants/" .. variant .. "/layouts/grids/oot.json")
@@ -20,6 +24,7 @@ dir = "ootmm/layouts/grids"
 grids = {
   -- "oot",
   -- "mm",
+  "z64",
   "grids"
 }
 for _, gridCat in ipairs(grids) do

@@ -1,0 +1,36 @@
+{
+  "z64_item_grid": {
+    "type": "itemgrid",
+    "rows": [
+      [
+        "z64_firearrow",
+        "z64_icearrow",
+        "z64_lightarrow"
+      ],
+      [
+        "z64_bombchus",
+        "z64_lens"
+      ]
+    ]
+  },
+  "z64_grid": {
+    "type": "dock",
+    "content": [
+      {
+        "type": "group",
+        "header": "Items",
+        "dock": "top",
+        "header_content": {
+          "type": "button_popup",
+          "style": "settings",
+          "popup_background": "#FF212121",
+          "layout": "oot_options_popup"
+        },
+        "content": {
+          "type": "layout",
+          "key": "z64_item_grid"
+        }
+      }
+    ]
+  }
+}
