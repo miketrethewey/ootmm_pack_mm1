@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Termina",
+    "children": [
+      {
+        "name": "Clock Tower",
+        "sections": [
+          {
+            "name": "Portal to Ocarina of Time",
+            "chest_opened_img": "ootrando_overworldmap_hamsda/images/ocarina.png",
+            "chest_unopened_img": "ootrando_overworldmap_hamsda/images/ocarina.png",
+            "access_rules": [
+              "mm_ocarina,mm_time"
+            ],
+            "item_count": 1
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "termina",
+            "x": 117,
+            "y": 139
+          }
+        ]
+      }
+    ]
+  }
+]

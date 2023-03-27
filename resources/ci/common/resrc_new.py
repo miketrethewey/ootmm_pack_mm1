@@ -170,6 +170,7 @@ def check_layouts(data):
 
     # layout:settings refs
     if ("access_rules" in keys) or \
+        ("hosted_item" in keys) or \
         ("visibility_rules" in keys) or \
         ("force_invisibility_rules" in keys) or \
             ("item" in keys):

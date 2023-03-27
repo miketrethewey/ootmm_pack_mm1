@@ -33,39 +33,6 @@
     ]
   },
   {
-    "name": "Z64 Bombchus",
-    "type": "composite_toggle",
-    "codes": "z64_bombchus",
-    "item_left": "oot_bombchus",
-    "item_right": "mm_bombchus",
-    "images": [
-      {
-        "left": false,
-        "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
-        "img_mods": "@disabled"
-      },
-      {
-        "left": true,
-        "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
-        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
-      },
-      {
-        "left": false,
-        "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
-        "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
-      },
-      {
-        "left": true,
-        "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
-        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
-      }
-    ]
-  },
-  {
     "name": "Z64 Ice Arrow",
     "type": "composite_toggle",
     "codes": "z64_icearrow",
@@ -99,39 +66,6 @@
     ]
   },
   {
-    "name": "Z64 Lens of Truth",
-    "type": "composite_toggle",
-    "codes": "z64_lens",
-    "item_left": "oot_lens",
-    "item_right": "mm_lens",
-    "images": [
-      {
-        "left": false,
-        "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
-        "img_mods": "@disabled"
-      },
-      {
-        "left": true,
-        "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
-        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
-      },
-      {
-        "left": false,
-        "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
-        "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
-      },
-      {
-        "left": true,
-        "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
-        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
-      }
-    ]
-  },
-  {
     "name": "Z64 Light Arrow",
     "type": "composite_toggle",
     "codes": "z64_lightarrow",
@@ -160,6 +94,72 @@
         "left": true,
         "right": true,
         "img": "./ootrando_overworldmap_hamsda/images/lightarrow.png",
+        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
+      }
+    ]
+  },
+  {
+    "name": "Z64 Bombchus",
+    "type": "composite_toggle",
+    "codes": "z64_bombchus",
+    "item_left": "oot_bombchus",
+    "item_right": "mm_bombchus",
+    "images": [
+      {
+        "left": false,
+        "right": false,
+        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img_mods": "@disabled"
+      },
+      {
+        "left": true,
+        "right": false,
+        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
+      },
+      {
+        "left": false,
+        "right": true,
+        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
+      },
+      {
+        "left": true,
+        "right": true,
+        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
+      }
+    ]
+  },
+  {
+    "name": "Z64 Lens of Truth",
+    "type": "composite_toggle",
+    "codes": "z64_lens",
+    "item_left": "oot_lens",
+    "item_right": "mm_lens",
+    "images": [
+      {
+        "left": false,
+        "right": false,
+        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img_mods": "@disabled"
+      },
+      {
+        "left": true,
+        "right": false,
+        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
+      },
+      {
+        "left": false,
+        "right": true,
+        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
+      },
+      {
+        "left": true,
+        "right": true,
+        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]

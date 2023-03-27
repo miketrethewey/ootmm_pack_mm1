@@ -380,4 +380,71 @@ for src, src_data in srcs.items():
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
                 jsonFile.write(json.dumps(manifestJSON, indent=2))
+
+            # ./[oot]/locations/overworld.json
+            '''
+            '''
+            print("   > BUGFIX  : ./[oot]/locations/overworld.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "locations",
+                        "overworld.json"
+                    ),
+                    "r+",
+                    encoding="utf-8-sig"
+                )
+            ) as jsonFile:
+                locationsJSON = json.load(jsonFile)
+                # Fix Kak GS Watchtower (N)
+                # location = locationsJSON[0]["children"][2]["children"][1]["children"][15]["sections"][4]
+                # location["access_rules"][1] = location["access_rules"][1].replace("$has_bombchus", "$has|oot_bombchu")
+                # locationsJSON[0]["children"][2]["children"][1]["children"][15]["sections"][4] = location
+
+                # Fix Mask Shop
+                #  except don't for OoT/MM Rando
+                location = locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2]
+                for i, section in enumerate(location["sections"]):
+                    section["item_count"] = 1
+                    location["sections"][i] = section
+                # locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2] = location
+
+                jsonFile.seek(0)
+                jsonFile.truncate(0)
+                jsonFile.write(json.dumps(locationsJSON, indent=2))
+
+            # ./[oot]/scripts/cached_helpers.json
+            # Always invalidate cache
+            '''
+            '''
+            print("   > BUGFIX  : ./[oot]/scripts/cached_helpers.json")
+            with(
+                open(
+                    os.path.join(
+                        ".",
+                        src,
+                        "scripts",
+                        "cached_helpers.lua"
+                    ),
+                    "r+",
+                    encoding="utf-8"
+                )
+            ) as luaFile:
+                luaLines = luaFile.readlines()
+                inSpecial = False
+                for [i, luaLine] in enumerate(luaLines):
+                    if "not amount_cache[item]" in luaLine:
+                        inSpecial = True
+                        luaLine = "-- " + luaLine
+                        luaLines[i] = luaLine
+                    if "end" in luaLine and inSpecial:
+                        inSpecial = False
+                        luaLine = "-- " + luaLine
+                        luaLines[i] = luaLine
+                luaFile.seek(0)
+                luaFile.truncate(0)
+                luaFile.writelines(luaLines)
+
     print()

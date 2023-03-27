@@ -3,6 +3,12 @@ if variant == "" then
   variant = "items_only"
 end
 
+-- Items
+print("Loading Items")
+Tracker:AddItems("ootmm/items/oot_child_trade.json")
+Tracker:AddItems("ootmm/items/oot_adult_trade.json")
+Tracker:AddItems("ootmm/items/items.json")
+
 -- OoT Init
 print("Load OoT Init")
 ScriptHost:LoadScript("ootrando_overworldmap_hamsda/scripts/init.lua")
@@ -11,9 +17,10 @@ ScriptHost:LoadScript("ootrando_overworldmap_hamsda/scripts/init.lua")
 print("Load MM Init")
 ScriptHost:LoadScript("mmrando_pink/scripts/init.lua")
 
--- Items
-print("Loading Items")
-Tracker:AddItems("ootmm/items/items.json")
+-- Locations
+print("Loading Locations")
+Tracker:AddLocations("ootmm/locations/oot_overworld.json")
+Tracker:AddLocations("ootmm/locations/mm_overworld.json")
 
 -- Grids
 print("Loading Grids")

@@ -11,6 +11,39 @@
           [ "oot_sling", "oot_pierre", "oot_bombchus", "oot_hookshot", "oot_icearrow", "oot_faroreswind" ],
           [ "oot_boomerang", "oot_lens", "oot_beans", "oot_hammer", "oot_lightarrow", "oot_nayruslove" ],
           [ "oot_bottle1", "oot_bottle2", "oot_bottle3", "oot_bottle4", "oot_adulttrade", "oot_kidtrade" ],
+          // Trade
+          [
+            "oot_adultegg",
+            "oot_adultcucco",
+            "oot_cojiro",
+            "oot_mushroom",
+            "oot_oddpotion",
+            "oot_saw"
+          ],
+          [
+            "oot_brokensword",
+            "oot_prescription",
+            "oot_frog",
+            "oot_eyedrops",
+            "oot_claim",
+            ""
+          ],
+          [
+            "oot_childegg",
+            "oot_childcucco",
+            "oot_letter",
+            "oot_keaton",
+            "oot_keatonsold",
+            "oot_skull"
+          ],
+          [
+            "oot_skullsold",
+            "oot_spooky",
+            "oot_spookysold",
+            "oot_bunny",
+            "oot_bunnysold",
+            "oot_truth"
+          ],
           // Quest Status
           [ "oot_agony", "oot_card", "oot_triforce", "oot_skulltula", "oot_HP", "oot_HC" ],
           [

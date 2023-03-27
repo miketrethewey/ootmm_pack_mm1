@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Adult Egg",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/egg.png",
+    "img_mods": "overlay|ootrando_overworldmap_hamsda/images/overlay_adult.png",
+    "codes": "oot_adultegg"
+  },
+  {
+    "name": "Adult Cucco",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/cucco.png",
+    "img_mods": "overlay|ootrando_overworldmap_hamsda/images/overlay_adult.png",
+    "codes": "oot_adultcucco"
+  },
+  {
+    "name": "Cojiro",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/cojiro.png",
+    "codes": "oot_cojiro"
+  },
+  {
+    "name": "Mushroom",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/mushroom.png",
+    "codes": "oot_mushroom"
+  },
+  {
+    "name": "Odd Potion",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/medicine.png",
+    "codes": "oot_oddpotion"
+  },
+  {
+    "name": "Saw",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/saw.png",
+    "codes": "oot_saw"
+  },
+  {
+    "name": "Broken Sword",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/broken_sword.png",
+    "codes": "oot_brokensword"
+  },
+  {
+    "name": "Prescription",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/perscription.png",
+    "codes": "oot_prescription"
+  },
+  {
+    "name": "Frog",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/frog.png",
+    "codes": "oot_frog"
+  },
+  {
+    "name": "Eye Drops",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/eyedrops.png",
+    "codes": "oot_eyedrops"
+  },
+  {
+    "name": "Claim",
+    "type": "toggle",
+    "img": "ootrando_overworldmap_hamsda/images/claim.png",
+    "codes": "oot_claim"
+  }
+]
