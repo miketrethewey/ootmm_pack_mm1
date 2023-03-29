@@ -383,6 +383,12 @@ for src, src_data in srcs.items():
 
             # ./[oot]/locations/overworld.json
             '''
+            Fix Kak GS Watchtower
+              Needs Chus but not just bombs
+            Fix Mask Shop
+              Except not because rando
+            Fix HC Garden
+              Song from Impa & Zelda's Letter require 'oot_childcucco_used', not 'oot_childcucco'
             '''
             print("   > BUGFIX  : ./[oot]/locations/overworld.json")
             with(
@@ -400,16 +406,24 @@ for src, src_data in srcs.items():
                 locationsJSON = json.load(jsonFile)
                 # Fix Kak GS Watchtower (N)
                 # location = locationsJSON[0]["children"][2]["children"][1]["children"][15]["sections"][4]
+                # print(location)
                 # location["access_rules"][1] = location["access_rules"][1].replace("$has_bombchus", "$has|oot_bombchu")
                 # locationsJSON[0]["children"][2]["children"][1]["children"][15]["sections"][4] = location
 
                 # Fix Mask Shop
                 #  except don't for OoT/MM Rando
                 location = locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2]
+                # print(location["name"])
                 for i, section in enumerate(location["sections"]):
                     section["item_count"] = 1
                     location["sections"][i] = section
                 # locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2] = location
+
+                # Fix HC Garden
+                location = locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2]
+                # print(location["name"])
+                location["access_rules"][0] = location["access_rules"][0].replace("cucco","cucco_used")
+                locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2] = location
 
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
