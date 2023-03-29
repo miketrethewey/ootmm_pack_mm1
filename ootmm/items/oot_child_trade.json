@@ -52,7 +52,7 @@
     "name": "Skull Mask",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/skull.png",
-    "codes": "oot_skull,oot_postzelda,oot_postguard"
+    "codes": "oot_skull,oot_skullmask,oot_postzelda,oot_postguard"
   },
   {
     "name": "Skull Mask Sold",
@@ -88,6 +88,6 @@
     "name": "Mask of Truth",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/truth.png",
-    "codes": "oot_truth,oot_postzelda,oot_postguard"
+    "codes": "oot_maskoftruth,oot_postzelda,oot_postguard"
   }
 ]
