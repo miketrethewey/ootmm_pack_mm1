@@ -1,10 +1,19 @@
 {
-  "oot_grid": {
+  "oot_items": {
+    "type": "itemgrid",
+    "rows": [
+      [ "oot_sticks", "oot_nuts", "oot_bombs", "oot_bow", "oot_farrow", "oot_dinsfire" ],
+      [ "oot_sling", "oot_pierre", "oot_bombchus", "oot_hookshot", "oot_iarrow", "oot_nayruslove" ],
+      [ "oot_boomerang", "oot_lens", "oot_beans", "oot_hammer", "oot_larrow", "oot_faroreswind" ],
+      [ "oot_bottle1", "oot_bottle2", "oot_bottle3", "oot_bottle4", "", "" ]
+    ]
+  },
+  "oot_inventory": {
     "type": "dock",
     "content": [
       {
         "type": "group",
-        "header": "Items",
+        "header": "Inventory",
         "dock": "top",
         "header_content": {
           "type": "button_popup",
@@ -14,7 +23,7 @@
         },
         "content": {
           "type": "layout",
-          "key": "oot_item_grid_tall"
+          "key": "oot_items"
         }
       },
       {
@@ -39,15 +48,57 @@
           "width": 32,
           "height": 32
         }
-      },
-      {
-        "type": "group",
-        "header": "Pinned Locations",
-        "dock": "top",
-        "content": {
-          "type": "recentpins"
-        }
       }
     ]
+  },
+  "oot_trade": {
+    "type": "group",
+    "header": "Trade",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "oot_adultegg", "oot_adultcucco", "oot_cojiro", "oot_mushroom", "oot_oddpotion", "oot_saw" ],
+        [ "oot_brokensword", "oot_prescription", "oot_frog", "oot_eyedrops", "oot_claim", "" ],
+        [ "oot_childegg", "oot_childcucco", "oot_letter", "oot_keaton", "oot_keatonsold", "oot_skullmask" ],
+        [ "oot_skullsold", "oot_spooky", "oot_spookysold", "oot_bunny", "oot_bunnysold", "oot_truth" ]
+      ]
+    }
+  },
+  "oot_equipment": {
+    "type": "group",
+    "header": "Equipment",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "oot_agony", "oot_gerudocard", "oot_triforce", "oot_skulltula", "oot_HP", "oot_HC" ],
+        [ "oot_emerald", "oot_ruby", "oot_sapphire", "oot_sword1", "oot_sword2", "oot_sword3" ],
+        [ "oot_shadowmed", "oot_lightmed", "oot_forestmed", "oot_shield1", "oot_shield2", "oot_shield3" ],
+        [ "oot_spiritmed", "oot_watermed", "oot_firemed", "oot_bracelet", "oot_greentunic", "oot_tunics" ],
+        [ "", "oot_magic", "oot_wallet", "oot_scale", "oot_kokiriboots", "oot_boots" ]
+      ]
+    }
+  },
+  "oot_songs": {
+    "type": "group",
+    "header": "Songs",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "oot_lullaby", "oot_epona", "oot_saria", "oot_sun", "oot_time", "oot_storm" ],
+        [ "oot_minuet", "oot_bolero", "oot_serenade", "oot_requiem", "oot_nocturne", "oot_prelude" ]
+      ]
+    }
+  },
+  "oot_dungeons": {
+    "type": "group",
+    "header": "Dungeons",
+    "width": 325,
+    "content": {
+      "type": "layout",
+      "key": "oot_dungeon_grid_tall"
+    }
   }
 }

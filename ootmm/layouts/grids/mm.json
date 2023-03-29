@@ -11,5 +11,225 @@
         }
       }
     ]
+  },
+  "mm_inventory": {
+    "type": "group",
+    "header": "Inventory",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "mm_ocarina", "mm_bow", "mm_farrow", "mm_iarrow", "mm_larrow", "mm_roomkey" ],
+        [ "mm_bombs", "mm_bombchus", "mm_sticks", "mm_nuts", "mm_beans", "mm_magic" ],
+        [ "mm_keg", "mm_pictobox", "mm_lens", "mm_hookshot", "mm_fairy_sword", "mm_pendant" ],
+        [ "mm_bottle1", "mm_bottle2", "mm_bottle3", "mm_bottle4", "mm_bottle5", "mm_bottle6" ],
+        [ "mm_towndeed", "mm_swampdeed", "mm_mountaindeed", "mm_oceandeed", "mm_sword1", "mm_shield1" ],
+        [ "mm_wallet", "mm_moon_tear", "mm_special_delivery" ]
+      ]
+    }
+  },
+  "mm_songs": {
+    "type": "group",
+    "header": "Songs",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "mm_token_greatbay", "mm_heal", "mm_epona", "mm_soar", "mm_time", "mm_storm" ],
+        [ "mm_token_woodfall", "mm_sonata", "mm_lullaby", "mm_nova", "mm_elegy", "mm_oath" ]
+      ]
+    }
+  },
+  "mm_masks": {
+    "type": "group",
+    "header": "Masks",
+    "width": 325,
+    "content": {
+      "type": "itemgrid",
+      "rows": [
+        [ "mm_postman", "mm_allnight", "mm_blast", "mm_stone", "mm_deku" ],
+        [ "mm_keaton", "mm_bremen", "mm_bunny", "mm_don_gero", "mm_scents", "mm_goron" ],
+        [ "mm_romanimask", "mm_troupeleader", "mm_kafeimask", "mm_couple", "mm_truthmask", "mm_zora" ],
+        [ "mm_kamaro", "mm_gibdo", "mm_garo", "mm_captain", "mm_deity" ]
+      ]
+    }
+  },
+  "mm_dungeons": {
+    "type": "group",
+    "header": "Dungeons",
+    "width": 325,
+    "content": {
+      "type": "array",
+      "content": [
+        {
+          "type": "array",
+          "orientation": "horizontal",
+          "content": [
+            {
+              "type": "itemgrid",
+              "rows": [
+                [ "mm_bomber" ]
+              ]
+            },
+            {
+              "type": "itemgrid",
+              "item_size": 16,
+              "rows": [
+                [
+                  "mm_bomber1",
+                  "mm_bomber2",
+                  "mm_bomber3",
+                  "mm_bomber4",
+                  "mm_bomber5"
+                ]
+              ]
+            },
+            {
+              "type": "itemgrid",
+              "rows": [
+                [ "mm_letter" ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "itemgrid",
+          "rows": [
+            [
+              "mm_redpotionlocated", "mm_bluepotionlocated", "mm_milklocated", "mm_seahorselocated", "mm_dustlocated", "mm_chateaulocated"
+            ],
+            [
+              "mm_woodfall",
+              "mm_woodfall_stray_fairies",
+              "mm_snowhead",
+              "mm_snowhead_stray_fairies",
+              "mm_greatbay",
+              "mm_greatbay_stray_fairies",
+              "mm_stonetower",
+              "mm_stonetower_stray_fairies"
+            ]
+          ]
+        },
+        {
+          "type": "array",
+          "orientation": "horizontal",
+          "margin": "0,0",
+          "content": [
+            {
+              "type": "array",
+              "orientation": "horizontal",
+              "margin": "5,0",
+              "content": [
+                {
+                  "type": "item",
+                  "item": "mm_woodfall_boss_key",
+                  "margin": "0,2",
+                  "width": 16,
+                  "height": 16
+                },
+                {
+                  "type": "item",
+                  "item": "mm_woodfall_label",
+                  "margin": "0,2",
+                  "width": 32,
+                  "height": 12
+                },
+                {
+                  "type": "item",
+                  "item": "mm_woodfall_small_keys",
+                  "margin": "1,2",
+                  "width": 16,
+                  "height": 16
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "orientation": "horizontal",
+              "margin": "5,0",
+              "content": [
+                {
+                  "type": "item",
+                  "item": "mm_snowhead_boss_key",
+                  "margin": "0,2",
+                  "width": 16,
+                  "height": 16
+                },
+                {
+                  "type": "item",
+                  "item": "mm_snowhead_label",
+                  "margin": "0,2",
+                  "width": 32,
+                  "height": 12
+                },
+                {
+                  "type": "item",
+                  "item": "mm_snowhead_small_keys",
+                  "margin": "1,2",
+                  "width": 16,
+                  "height": 16
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "orientation": "horizontal",
+              "margin": "5,0",
+              "content": [
+                {
+                  "type": "item",
+                  "item": "mm_greatbay_boss_key",
+                  "margin": "0,2",
+                  "width": 16,
+                  "height": 16
+                },
+                {
+                  "type": "item",
+                  "item": "mm_greatbay_label",
+                  "margin": "0,2",
+                  "width": 32,
+                  "height": 12
+                },
+                {
+                  "type": "item",
+                  "item": "mm_greatbay_small_keys",
+                  "margin": "1,2",
+                  "width": 16,
+                  "height": 16
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "orientation": "horizontal",
+              "margin": "5,0",
+              "content": [
+                {
+                  "type": "item",
+                  "item": "mm_stonetower_boss_key",
+                  "margin": "0,2",
+                  "width": 16,
+                  "height": 16
+                },
+                {
+                  "type": "item",
+                  "item": "mm_stonetower_label",
+                  "margin": "0,2",
+                  "width": 32,
+                  "height": 12
+                },
+                {
+                  "type": "item",
+                  "item": "mm_stonetower_small_keys",
+                  "margin": "1,2",
+                  "width": 16,
+                  "height": 16
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }
 }

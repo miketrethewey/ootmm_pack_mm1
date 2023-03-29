@@ -6,26 +6,103 @@
         "title": "Ocarina of Time",
         "icon": "ootrando_overworldmap_hamsda/images/ocarina.png",
         "content": {
-          "type": "layout",
-          "key": "oot_grid",
-          "width": 325
+          "type": "tabbed",
+          "tabs": [
+            {
+              "title": "Inventory",
+              "content": {
+                "type": "layout",
+                "key": "oot_inventory",
+                "width": 325
+              }
+            },
+            {
+              "title": "Trade",
+              "content": {
+                "type": "layout",
+                "key": "oot_trade"
+              }
+            },
+            {
+              "title": "Equipment",
+              "content": {
+                "type": "layout",
+                "key": "oot_equipment"
+              }
+            },
+            {
+              "title": "Songs",
+              "content": {
+                "type": "layout",
+                "key": "oot_songs"
+              }
+            },
+            {
+              "title": "Dungeons",
+              "content": {
+                "type": "layout",
+                "key": "oot_dungeons"
+              }
+            }
+          ]
         }
       },
       {
         "title": "Majora's Mask",
         "icon": "ootmm/images/mm/items/MM_Majora's_Mask_Model.png",
         "content": {
-          "type": "layout",
-          "key": "mm_grid",
-          "width": 325
+          "type": "tabbed",
+          "tabs": [
+            {
+              "title": "Inventory",
+              "content": {
+                "type": "layout",
+                "key": "mm_inventory",
+                "width": 325
+              }
+            },
+            {
+              "title": "Masks",
+              "content": {
+                "type": "layout",
+                "key": "mm_masks"
+              }
+            },
+            {
+              "title": "Songs",
+              "content": {
+                "type": "layout",
+                "key": "mm_songs"
+              }
+            },
+            {
+              "title": "Dungeons",
+              "content": {
+                "type": "layout",
+                "key": "mm_dungeons"
+              }
+            }
+          ]
         }
       },
+      // {
+      //   "title": "Both",
+      //   "icon": "ootmm/images/mm/items/n64.png",
+      //   "content": {
+      //     "type": "layout",
+      //     "key": "z64_grid"
+      //   }
+      // },
       {
-        "title": "Both",
-        "icon": "ootmm/images/mm/items/n64.png",
+        "title": "Pinned Locations",
+        "icon": "ootmm/images/meta/pin.png",
         "content": {
-          "type": "layout",
-          "key": "z64_grid"
+          "type": "group",
+          "header": "Pinned Locations",
+          "dock": "top",
+          "content": {
+            "type": "recentpins"
+          }
         }
       }
     ]

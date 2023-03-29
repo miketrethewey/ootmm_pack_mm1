@@ -118,14 +118,6 @@
           "width": 32,
           "height": 32
         }
-      },
-      {
-        "type": "group",
-        "header": "Pinned Locations",
-        "dock": "top",
-        "content": {
-          "type": "recentpins"
-        }
       }
     ]
   }

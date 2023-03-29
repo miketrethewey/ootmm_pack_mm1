@@ -226,14 +226,6 @@
           "type": "layout",
           "key": "mm_shared_item_grid_mm1"
         }
-      },
-      {
-        "type": "group",
-        "header": "Pinned Locations",
-        "dock": "top",
-        "content": {
-          "type": "recentpins"
-        }
       }
     ]
   }

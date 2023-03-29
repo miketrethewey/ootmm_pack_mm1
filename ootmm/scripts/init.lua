@@ -29,8 +29,8 @@ Tracker:AddLayouts("ootmm/variants/" .. variant .. "/layouts/grids/mm.json")
 
 dir = "ootmm/layouts/grids"
 grids = {
-  -- "oot",
-  -- "mm",
+  "oot",
+  "mm",
   "z64",
   "grids"
 }
