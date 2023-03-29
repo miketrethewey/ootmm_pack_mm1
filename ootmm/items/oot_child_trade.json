@@ -46,7 +46,7 @@
     "name": "Keaton Mask Sold",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
-    "codes": "oot_keatonsold,oot_postzelda,oot_postguard"
+    "codes": "oot_keatonsold,oot_postguard"
   },
   {
     "name": "Skull Mask",
@@ -58,7 +58,7 @@
     "name": "Skull Mask Sold",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
-    "codes": "oot_skullsold,oot_postzelda,oot_postguard"
+    "codes": "oot_skullsold,oot_postguard"
   },
   {
     "name": "Spooky Mask",
@@ -70,7 +70,7 @@
     "name": "Spooky Mask Sold",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
-    "codes": "oot_spookysold,oot_postzelda,oot_postguard"
+    "codes": "oot_spookysold,oot_postguard"
   },
   {
     "name": "Bunny Mask",
@@ -82,7 +82,7 @@
     "name": "Bunny Mask Sold",
     "type": "toggle",
     "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
-    "codes": "oot_bunnysold,oot_postzelda,oot_postguard"
+    "codes": "oot_bunnysold,oot_postguard"
   },
   {
     "name": "Mask of Truth",
