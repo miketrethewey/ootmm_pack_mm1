@@ -389,6 +389,9 @@ for src, src_data in srcs.items():
               Except not because rando
             Fix HC Garden
               Song from Impa & Zelda's Letter require 'oot_childcucco_used', not 'oot_childcucco'
+            Fix Song from Malon
+              Requires 'oot_childegg'
+              Add in addition to 'oot_postzelda' along with 'oot_childcucco'
             '''
             print("   > BUGFIX  : ./[oot]/locations/overworld.json")
             with(
@@ -424,6 +427,15 @@ for src, src_data in srcs.items():
                 # print(location["name"])
                 location["access_rules"][0] = location["access_rules"][0].replace("cucco","cucco_used")
                 locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2] = location
+
+                # Fix Song from Malon
+                location = locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0]
+                # print(location["name"])
+                location["access_rules"].append(location["access_rules"][0])
+                location["access_rules"].append(location["access_rules"][0])
+                location["access_rules"][0] = location["access_rules"][0].replace("postzelda","childegg")
+                location["access_rules"][1] = location["access_rules"][1].replace("postzelda","childcucco")
+                locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0] = location
 
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
