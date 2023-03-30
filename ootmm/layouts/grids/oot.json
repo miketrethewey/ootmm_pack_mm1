@@ -61,7 +61,8 @@
         [ "oot_adultegg", "oot_adultcucco", "oot_cojiro", "oot_mushroom", "oot_oddpotion", "oot_saw" ],
         [ "oot_brokensword", "oot_prescription", "oot_frog", "oot_eyedrops", "oot_claim", "" ],
         [ "oot_childegg", "oot_childcucco", "oot_letter", "oot_keaton", "oot_keatonsold", "oot_skull" ],
-        [ "oot_skullsold", "oot_spooky", "oot_spookysold", "oot_bunny", "oot_bunnysold", "oot_maskoftruth" ]
+        [ "oot_skullsold", "oot_spooky", "oot_spookysold", "oot_bunny", "oot_bunnysold", "oot_maskoftruth" ],
+        [ "oot_malon_met_castle" ]
       ]
     }
   },

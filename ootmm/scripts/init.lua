@@ -7,7 +7,8 @@ end
 print("Loading Items")
 Tracker:AddItems("ootmm/items/oot_child_trade.json")
 Tracker:AddItems("ootmm/items/oot_adult_trade.json")
-Tracker:AddItems("ootmm/items/items.json")
+Tracker:AddItems("ootmm/items/oot_storymarkers.json")
+Tracker:AddItems("ootmm/items/z64_items.json")
 
 -- OoT Init
 print("Load OoT Init")
@@ -41,6 +42,7 @@ print("")
 
 if string.find(variant, "map") then
   print("Map Variant; load map stuff")
+  ScriptHost:LoadScript("ootmm/scripts/tracking/updaters.lua")
 else
   print("Not a Map Variant; load default stuff")
   -- Layout Defaults

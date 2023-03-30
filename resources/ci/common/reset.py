@@ -1,4 +1,4 @@
-# pylint: disable=protected-access
+# pylint: disable=invalid-name, line-too-long, pointless-string-statement, protected-access
 '''
 Reset, delete packs, copy packs, bugfixes
 '''
@@ -8,7 +8,6 @@ import os
 import shutil
 import ssl
 import subprocess
-import sys
 import urllib.request
 import zipfile
 import pyjson5
@@ -28,7 +27,9 @@ subprocess.call(
 
 srcs = {
     "ootrando_overworldmap_hamsda": {
-        "url": "https://raw.githubusercontent.com/Hamsda/EmoTrackerPacks/master/ootrando_overworldmap_hamsda.zip"
+        "url": "https://raw.githubusercontent.com/" + \
+            "Hamsda/EmoTrackerPacks/" + \
+            "master/ootrando_overworldmap_hamsda.zip"
     },
     "mmrando_pink": {
         "url": ""
@@ -49,10 +50,10 @@ for src, src_data in srcs.items():
             if "url" in src_data:
                 url = src_data["url"]
                 context = ssl._create_unverified_context()
-                archive_req = urllib.request.urlopen(url, context=context)
-                archive_data = archive_req.read()
-                with open(archive_path, "wb") as archive_file:
-                    archive_file.write(archive_data)
+                with urllib.request.urlopen(url, context=context) as archive_req:
+                    archive_data = archive_req.read()
+                    with open(archive_path, "wb") as archive_file:
+                        archive_file.write(archive_data)
                 error = False
     if error:
         # sys.exit(1)
@@ -70,6 +71,7 @@ for src, src_data in srcs.items():
             # ./[mm]/manifest.json
             # Add platform ID
             '''
+            "platform": "n64"
             '''
             print("   > BUGFIX  : ./[mm]/manifest.json")
             with(
@@ -92,7 +94,7 @@ for src, src_data in srcs.items():
             # ./[mm]/items/dungeon_items.json
             # Vanilla button "true" to true
             '''
-    "loop": "true",
+            "loop": "true"
             '''
             print("   > BUGFIX  : ./[mm]/items/dungeon_items.json")
             with(
@@ -118,6 +120,7 @@ for src, src_data in srcs.items():
             # ./[mm]/items/dungeon_items.json
             # Update logic for Combo Rando
             '''
+            Disable starting MM Ocarina & MM Song of Time
             '''
             print("   > HOTFIX  : ./[mm]/items/dungeon_items.json")
             with(
@@ -259,12 +262,18 @@ for src, src_data in srcs.items():
                 jsonLines = jsonFile.readlines()
                 for i in range(2280, 2290):
                     if "\"$has_projectile\"" in jsonLines[i - 1]:
-                        jsonLines[i - 1] = jsonLines[i - 1].replace("\"$has_projectile\"", "[\"$has_projectile\"]")
+                        jsonLines[i - 1] = jsonLines[i - 1].replace(
+                            "\"$has_projectile\"",
+                            "[\"$has_projectile\"]"
+                        )
                 jsonLines[2569 - 1] = "" + "\n"
                 jsonLines[2570 - 1] = "" + "\n"
                 for i in range(3990, 4010):
                     if "\"[$has_explosives]\"" in jsonLines[i - 1]:
-                        jsonLines[i - 1] = jsonLines[i - 1].replace("\"[$has_explosives]\"", "[\"[$has_explosives]\"]")
+                        jsonLines[i - 1] = jsonLines[i - 1].replace(
+                            "\"[$has_explosives]\"",
+                            "[\"[$has_explosives]\"]"
+                        )
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
                 jsonFile.writelines(jsonLines)
@@ -272,6 +281,7 @@ for src, src_data in srcs.items():
             # ./[mm]/locations/overworld.json
             # Add Rando access requirements for MM
             '''
+            Majora's Mask entry logic: MM Ocarina, MM Song of Time
             '''
             print("   > HOTFIX  : ./[mm]/locations/overworld.json")
             with(
@@ -362,6 +372,7 @@ for src, src_data in srcs.items():
             # ./[oot]/manifest.json
             # Add platform ID
             '''
+            "platform": "n64"
             '''
             print("   > BUGFIX  : ./[oot]/manifest.json")
             with(
@@ -389,9 +400,10 @@ for src, src_data in srcs.items():
               Except not because rando
             Fix HC Garden
               Song from Impa & Zelda's Letter require 'oot_childcucco_used', not 'oot_childcucco'
+            Fix Malon at Castle
+              Add hosted "Malon met at Castle" storymarker
             Fix Song from Malon
-              Requires 'oot_childegg'
-              Add in addition to 'oot_postzelda' along with 'oot_childcucco'
+              Requires 'oot_ocarina' and "Malon met at Castle" collected
             '''
             print("   > BUGFIX  : ./[oot]/locations/overworld.json")
             with(
@@ -428,13 +440,19 @@ for src, src_data in srcs.items():
                 location["access_rules"][0] = location["access_rules"][0].replace("cucco","cucco_used")
                 locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2] = location
 
+                # Fix Malon at Castle
+                location = locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][0]["sections"][0]
+                # print(location["name"])
+                location["hosted_item"] = "oot_malon_met_castle"
+                locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][0]["sections"][0] = location
+
                 # Fix Song from Malon
                 location = locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0]
                 # print(location["name"])
-                location["access_rules"].append(location["access_rules"][0])
-                location["access_rules"].append(location["access_rules"][0])
-                location["access_rules"][0] = location["access_rules"][0].replace("postzelda","childegg")
-                location["access_rules"][1] = location["access_rules"][1].replace("postzelda","childcucco")
+                location["access_rules"] = [
+                  "$oot_has_age|child,oot_ocarina,oot_malon_met_castle"
+                ]
+                location["hosted_item"] = "oot_malon_met_castle"
                 locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0] = location
 
                 jsonFile.seek(0)
