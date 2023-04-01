@@ -1,6 +1,6 @@
 [
   {
-    "name": "Hyrule",
+    "name": "Hyrule Injection",
     "children": [
       {
         "name": "Market Mask Shop",
@@ -10,6 +10,7 @@
             "chest_opened_img": "ootmm/images/mm/items/MM_Majora's_Mask_Model.png",
             "chest_unopened_img": "ootmm/images/mm/items/MM_Majora's_Mask_Model.png",
             "access_rules": [
+              "[]",
               "mm_ocarina,mm_time"
             ],
             "item_count": 1

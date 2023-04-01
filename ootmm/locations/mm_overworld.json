@@ -1,6 +1,7 @@
 [
   {
-    "name": "Termina",
+    "name": "Termina Injection",
+    "parent": "Termina",
     "children": [
       {
         "name": "Clock Tower",
@@ -9,9 +10,7 @@
             "name": "Portal to Ocarina of Time",
             "chest_opened_img": "ootrando_overworldmap_hamsda/images/ocarina.png",
             "chest_unopened_img": "ootrando_overworldmap_hamsda/images/ocarina.png",
-            "access_rules": [
-              "mm_ocarina,mm_time"
-            ],
+            "access_rules": [],
             "item_count": 1
           }
         ],

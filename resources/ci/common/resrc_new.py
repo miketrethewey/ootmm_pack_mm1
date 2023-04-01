@@ -66,11 +66,11 @@ def update_item(item_string):
         # 6: func arg2
         # 7: post-symbol
         if match:
-            if not match["Name"].startswith(gameID + "_"):
+            if not match["Name"].startswith(gameID + "_") and match["Name"].strip() != "":
                 item = match["pre"] + \
-                    gameID + "_" + match["Name"] + \
-                    match["func_split"] + match["func_arg"] + \
-                    match["func_split2"] + match["func_arg2"] + \
+                    gameID + "_" + match["Name"].strip() + \
+                    match["func_split"] + match["func_arg"].strip() + \
+                    match["func_split2"] + match["func_arg2"].strip() + \
                     match["post"]
                 # print(item)
         items[i] = item

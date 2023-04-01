@@ -300,8 +300,11 @@ for src, src_data in srcs.items():
                 jsonData.insert(
                     0,
                     {
-                        "name": "Termina",
-                        "access_rules": [ "mm_ocarina,mm_time" ]
+                      "name": "Termina",
+                      "access_rules": [
+                        "[]",
+                        "mm_ocarina,mm_time"
+                      ]
                     }
                 )
                 jsonData[1]["parent"] = "Termina"
@@ -427,33 +430,57 @@ for src, src_data in srcs.items():
 
                 # Fix Mask Shop
                 #  except don't for OoT/MM Rando
+                #  Hyrule Town/Market/Market Mask Shop
                 location = locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2]
                 # print(location["name"])
-                for i, section in enumerate(location["sections"]):
-                    section["item_count"] = 1
-                    location["sections"][i] = section
-                # locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2] = location
+                if location["name"] == "Market Mask Shop":
+                    for i, section in enumerate(location["sections"]):
+                        section["item_count"] = 1
+                        location["sections"][i] = section
+                    # locationsJSON[0]["children"][2]["children"][3]["children"][0]["children"][2] = location
+                    # print(f"    > Fixed {location['name']}")
 
                 # Fix HC Garden
+                #  Hyrule Castle Grounds/HC Garden
                 location = locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2]
                 # print(location["name"])
-                location["access_rules"][0] = location["access_rules"][0].replace("cucco","cucco_used")
-                locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2] = location
+                if location["name"] == "HC Garden":
+                    location["access_rules"][0] = location["access_rules"][0].replace("cucco","cucco_used")
+                    locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][2] = location
+                    print(f"    > Fixed {location['name']}")
+
+                # Fix Impa's House HP
+                #  Kakariko Village/Kak Impas House Back/Kak Impas House Freestanding PoH
+                location = locationsJSON[0]["children"][2]["children"][1]["children"][2]["sections"][0]
+                # print(location["name"])
+                if location["name"] == "Kak Impas House Freestanding PoH":
+                    location["access_rules"] = [
+                        "$oot_has_age|child,oot_bombs",
+                        "$oot_has_age|adult,oot_hookshot"
+                    ]
+                    locationsJSON[0]["children"][2]["children"][1]["children"][2]["sections"][0] = location
+                    print(f"    > Fixed {location['name']}")
 
                 # Fix Malon at Castle
+                #  Hyrule Castle Grounds/Malon at Castle
                 location = locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][0]["sections"][0]
                 # print(location["name"])
-                location["hosted_item"] = "oot_malon_met_castle"
-                locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][0]["sections"][0] = location
+                if location["name"] == "HC Malon Egg":
+                    location["hosted_item"] = "oot_malon_met_castle"
+                    locationsJSON[0]["children"][2]["children"][3]["children"][1]["children"][0]["sections"][0] = location
+                    print(f"    > Fixed {location['name']}")
 
                 # Fix Song from Malon
+                #  Lon Lon Ranch/Malon at Ranch/Song from Malon
                 location = locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0]
                 # print(location["name"])
-                location["access_rules"] = [
-                  "$oot_has_age|child,oot_ocarina,oot_malon_met_castle"
-                ]
-                location["hosted_item"] = "oot_malon_met_castle"
-                locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0] = location
+                if location["name"] == "Song from Malon":
+                    location["access_rules"] = [
+                      "$oot_has_age|child,oot_ocarina,oot_malon_met_castle"
+                    ]
+                    location["hosted_item"] = "oot_malon_met_castle"
+                    locationsJSON[0]["children"][2]["children"][0]["children"][11]["children"][0]["sections"][0] = location
+                    print(f"    > Fixed {location['name']}")
 
                 jsonFile.seek(0)
                 jsonFile.truncate(0)
