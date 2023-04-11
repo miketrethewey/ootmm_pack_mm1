@@ -12,7 +12,7 @@ Tracker:AddItems("ootmm/items/z64_items.json")
 
 -- OoT Init
 print("Load OoT Init")
-ScriptHost:LoadScript("ootrando_overworldmap_hamsda/scripts/init.lua")
+ScriptHost:LoadScript("ootrando_overworldmap_hamm1sda/scripts/init.lua")
 
 -- MM Init
 print("Load MM Init")

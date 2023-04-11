@@ -4,7 +4,7 @@
     "tabs": [
       {
         "title": "Ocarina of Time",
-        "icon": "ootrando_overworldmap_hamsda/images/ocarina.png",
+        "icon": "ootrando_overworldmap_hamm1sda/images/ocarina.png",
         "content": {
           "type": "tabbed",
           "tabs": [
@@ -112,7 +112,7 @@
     "tabs": [
       {
         "title": "Hyrule: Child",
-        "icon": "ootrando_overworldmap_hamsda/images/sword1.png",
+        "icon": "ootrando_overworldmap_hamm1sda/images/sword1.png",
         "content": {
           "type": "map",
           "maps": [
@@ -123,7 +123,7 @@
       },
       {
         "title": "Hyrule: Adult",
-        "icon": "ootrando_overworldmap_hamsda/images/sword2.png",
+        "icon": "ootrando_overworldmap_hamm1sda/images/sword2.png",
         "content": {
           "type": "map",
           "maps": [
@@ -134,7 +134,7 @@
       },
       {
         "title": "Hyrule: Both",
-        "icon": "ootrando_overworldmap_hamsda/images/map.png",
+        "icon": "ootrando_overworldmap_hamm1sda/images/map.png",
         "content": {
           "type": "map",
           "orientation": "vertical",

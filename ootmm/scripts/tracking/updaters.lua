@@ -18,7 +18,7 @@ end
 
 function tracker_on_accessibility_updated()
   print("Updated  Accessibility.")
-  mm_tracker_on_accessibility_updated()
+  -- mm_tracker_on_accessibility_updated()
   oot_tracker_on_accessibility_updated()
 end
 

@@ -2,8 +2,8 @@
   {
     "name": "Child Egg",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/egg.png",
-    "img_mods": "overlay|ootrando_overworldmap_hamsda/images/overlay_child.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/egg.png",
+    "img_mods": "overlay|ootrando_overworldmap_hamm1sda/images/overlay_child.png",
     "codes": "oot_childegg"
   },
   {
@@ -12,14 +12,14 @@
     "stages": [
       {
         "name": "Child Cucco",
-        "img": "ootrando_overworldmap_hamsda/images/cucco.png",
-        "img_mods": "overlay|ootrando_overworldmap_hamsda/images/overlay_child.png",
+        "img": "ootrando_overworldmap_hamm1sda/images/cucco.png",
+        "img_mods": "overlay|ootrando_overworldmap_hamm1sda/images/overlay_child.png",
         "codes": "oot_childcucco"
       },
       {
         "name": "Used Cucco",
-        "img": "ootrando_overworldmap_hamsda/images/cucco.png",
-        "img_mods": "overlay|ootrando_overworldmap_hamsda/images/overlay_child.png,overlay|ootrando_overworldmap_hamsda/images/check.png",
+        "img": "ootrando_overworldmap_hamm1sda/images/cucco.png",
+        "img_mods": "overlay|ootrando_overworldmap_hamm1sda/images/overlay_child.png,overlay|ootrando_overworldmap_hamm1sda/images/check.png",
         "codes": "oot_childcucco_used,oot_postzelda"
       }
     ]
@@ -27,67 +27,67 @@
   {
     "name": "Zelda's Letter",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/letter.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/letter.png",
     "codes": "oot_letter,oot_postzelda"
   },
   {
     "name": "Letter Shown",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/sold_out.png",
     "codes": "oot_lettershown,oot_postzelda,oot_postguard"
   },
   {
     "name": "Keaton Mask",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/keaton.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/keaton.png",
     "codes": "oot_keaton,oot_postzelda,oot_postguard"
   },
   {
     "name": "Keaton Mask Sold",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/sold_out.png",
     "codes": "oot_keatonsold,oot_postguard"
   },
   {
     "name": "Skull Mask",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/skull.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/skull.png",
     "codes": "oot_skull,oot_skullmask,oot_postzelda,oot_postguard"
   },
   {
     "name": "Skull Mask Sold",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/sold_out.png",
     "codes": "oot_skullsold,oot_postguard"
   },
   {
     "name": "Spooky Mask",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/spooky.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/spooky.png",
     "codes": "oot_spooky,oot_postzelda,oot_postguard"
   },
   {
     "name": "Spooky Mask Sold",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/sold_out.png",
     "codes": "oot_spookysold,oot_postguard"
   },
   {
     "name": "Bunny Mask",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/bunny.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/bunny.png",
     "codes": "oot_bunny,oot_postzelda,oot_postguard"
   },
   {
     "name": "Bunny Mask Sold",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/sold_out.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/sold_out.png",
     "codes": "oot_bunnysold,oot_postguard"
   },
   {
     "name": "Mask of Truth",
     "type": "toggle",
-    "img": "ootrando_overworldmap_hamsda/images/truth.png",
+    "img": "ootrando_overworldmap_hamm1sda/images/truth.png",
     "codes": "oot_maskoftruth,oot_postzelda,oot_postguard"
   }
 ]

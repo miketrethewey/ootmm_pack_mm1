@@ -257,7 +257,7 @@ def check_files(resrcDirs, loop):
 
 srcs = {
     "oot": {
-        "packUID": "ootrando_overworldmap_hamsda",
+        "packUID": "ootrando_overworldmap_hamm1sda",
         "variants": []
     },
     "mm": {

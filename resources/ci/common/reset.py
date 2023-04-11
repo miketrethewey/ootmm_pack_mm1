@@ -26,10 +26,11 @@ subprocess.call(
     ], shell=True)
 
 srcs = {
-    "ootrando_overworldmap_hamsda": {
-        "url": "https://raw.githubusercontent.com/" + \
-            "Hamsda/EmoTrackerPacks/" + \
-            "master/ootrando_overworldmap_hamsda.zip"
+    "ootrando_overworldmap_hamm1sda": {
+        "url": "https://github.com/" + \
+            "miketrethewey/ootrando_overworldmap_hamm1sda/" + \
+            "archive/refs/heads/" + \
+            "unstable.zip"
     },
     "mmrando_pink": {
         "url": ""
@@ -53,6 +54,7 @@ for src, src_data in srcs.items():
                 with urllib.request.urlopen(url, context=context) as archive_req:
                     archive_data = archive_req.read()
                     with open(archive_path, "wb") as archive_file:
+                        print("   > DOWNLOAD:", src)
                         archive_file.write(archive_data)
                 error = False
     if error:
@@ -64,7 +66,33 @@ for src, src_data in srcs.items():
             dest = os.path.join(".", src)
             print("   > DEST    :", dest)
             myarchive.extractall(dest)
+            for item in os.listdir(dest):
+                if src in item and os.path.isdir(os.path.join(dest, item)):
+                    print("   > MOVE    :", os.path.join(dest, item), "->", os.path.join(".", src))
+                    # copy nested folder to new "root" folder
+                    # print(f"COPY  : {os.path.join(dest, item)} -> {os.path.join('.', src + '-new')}")
+                    shutil.copytree(
+                        os.path.join(dest, item),
+                        os.path.join(".", src + "-new")
+                    )
+                    # delete nested folder
+                    # print(f"DELETE: {os.path.join(dest, item)}")
+                    shutil.rmtree(
+                        os.path.join(dest, item)
+                    )
+                    # delete old folder
+                    # print(f"DELETE: {os.path.join(dest)}")
+                    shutil.rmtree(
+                        os.path.join(dest)
+                    )
+                    # rename "new" folder
+                    # print(f"MOVE  : {os.path.join('.', src + '-new')} -> {os.path.join('.', src)}")
+                    shutil.move(
+                        os.path.join(".", src + "-new"),
+                        os.path.join(".", src)
+                    )
             print()
+    exit(1)
 
     if os.path.isdir(os.path.join(".", src)):
         if "mm" in src:

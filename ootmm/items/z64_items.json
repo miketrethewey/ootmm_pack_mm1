@@ -9,25 +9,25 @@
       {
         "left": false,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/firearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/firearrow.png",
         "img_mods": "@disabled"
       },
       {
         "left": true,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/firearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/firearrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
       },
       {
         "left": false,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/firearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/firearrow.png",
         "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
       },
       {
         "left": true,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/firearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/firearrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]
@@ -42,25 +42,25 @@
       {
         "left": false,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/icearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/icearrow.png",
         "img_mods": "@disabled"
       },
       {
         "left": true,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/icearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/icearrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
       },
       {
         "left": false,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/icearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/icearrow.png",
         "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
       },
       {
         "left": true,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/icearrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/icearrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]
@@ -75,25 +75,25 @@
       {
         "left": false,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lightarrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lightarrow.png",
         "img_mods": "@disabled"
       },
       {
         "left": true,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lightarrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lightarrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
       },
       {
         "left": false,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lightarrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lightarrow.png",
         "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
       },
       {
         "left": true,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lightarrow.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lightarrow.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]
@@ -108,25 +108,25 @@
       {
         "left": false,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/bombchu.png",
         "img_mods": "@disabled"
       },
       {
         "left": true,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/bombchu.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
       },
       {
         "left": false,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/bombchu.png",
         "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
       },
       {
         "left": true,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/bombchu.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/bombchu.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]
@@ -141,25 +141,25 @@
       {
         "left": false,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lens.png",
         "img_mods": "@disabled"
       },
       {
         "left": true,
         "right": false,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lens.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png"
       },
       {
         "left": false,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lens.png",
         "img_mods": "overlay|ootmm/images/mm/overlay/mm.png"
       },
       {
         "left": true,
         "right": true,
-        "img": "./ootrando_overworldmap_hamsda/images/lens.png",
+        "img": "./ootrando_overworldmap_hamm1sda/images/lens.png",
         "img_mods": "overlay|ootmm/images/oot/overlay/ocarina.png,overlay|ootmm/images/mm/overlay/mm.png"
       }
     ]
